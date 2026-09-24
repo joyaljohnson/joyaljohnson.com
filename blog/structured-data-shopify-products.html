@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structured Data for Shopify Product Pages: Beyond the Basics | Joyal Johnson</title>
+<meta name="description" content="Basic product schema might earn you a price in search results. Complete schema, reviews, shipping, returns, FAQs, can earn you the full rich-result treatment. Here's the tiered breakdown.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0e0f16;font-family:Inter,system-ui,sans-serif;color:#e9e9ed}
+a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(22,24,38,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(233,233,237,.08)}
+header a.back{color:rgba(233,233,237,.7);text-decoration:none;font-size:13.5px}
+header a.back:hover{color:#e9e9ed}
+header .brand{font-weight:500;font-size:15px;letter-spacing:-.01em;color:#e9e9ed;text-decoration:none}
+article{padding:64px 0 96px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d2cefd;margin-bottom:18px}
+h1{margin:0 0 18px;font-size:36px;line-height:1.2;letter-spacing:-.03em;font-weight:500}
+@media (max-width:600px){ h1{font-size:26px} }
+.meta{font-size:13px;color:rgba(233,233,237,.45);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid rgba(233,233,237,.08)}
+.lede{font-size:19px;line-height:1.6;color:rgba(233,233,237,.8);margin:0 0 40px}
+h2{margin:48px 0 18px;font-size:26px;letter-spacing:-.02em;font-weight:500;color:#fff}
+h3{margin:32px 0 10px;font-size:18px;font-weight:500;color:#fff}
+p{font-size:16px;line-height:1.75;color:rgba(233,233,237,.72);margin:0 0 20px}
+ul,ol{margin:0 0 24px;padding-left:22px}
+li{font-size:16px;line-height:1.7;color:rgba(233,233,237,.72);margin-bottom:10px}
+li::marker{color:#9184d9}
+strong{color:#e9e9ed;font-weight:600}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#1a1c2b;border:1px solid rgba(233,233,237,.12);border-radius:4px;padding:1px 6px;color:#d2cefd}
+.layer-stack{display:flex;flex-direction:column;gap:10px;margin:20px 0 24px}
+.layer{padding:16px 20px;border-radius:8px;background:#1a1c2b;border:1px solid rgba(233,233,237,.1);border-left:3px solid #9184d9}
+.layer .layer-num{font:600 10.5px ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:#d2cefd;margin-bottom:4px}
+.layer p{margin:0;font-size:15px;color:rgba(233,233,237,.75)}
+.callout{margin:40px 0;padding:24px 28px;border-radius:10px;background:#1a1c2b;border:1px solid rgba(233,233,237,.1)}
+.callout p{margin:0;color:rgba(233,233,237,.8)}
+.cta{margin-top:56px;padding:32px;border-radius:10px;background:linear-gradient(180deg,#1a1c2b,#161826);border:1px solid rgba(233,233,237,.08);text-align:center}
+.cta p{margin:0 0 18px;color:rgba(233,233,237,.7)}
+.cta a{display:inline-flex;font-size:14px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:11.2px 22.4px;text-decoration:none}
+.cta a:hover{background:rgba(145,132,217,.14)}
+footer{padding:32px 44px;border-top:1px solid rgba(233,233,237,.08);text-align:center;font-size:12px;color:rgba(233,233,237,.4)}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/blog/index.html">&larr; Blogs</a>
+  <a class="brand" href="/index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">AI &amp; SEO Search</div>
+  <h1>Structured Data for Shopify Product Pages: Beyond the Basics</h1>
+  <div class="meta">Joyal Johnson &middot; Aug 12, 2026</div>
+
+  <p class="lede">Most Shopify stores have basic product schema in place and stop right there, never getting to the properties that actually trigger Google's enhanced search features.</p>
+
+  <p>If you've already got the fundamentals of JSON-LD schema sorted, this is the next step. Basic product schema might earn you a price in search results. Complete schema, reviews, availability, shipping details, return policies, can earn you the full treatment: stars, price, an "In Stock" badge, a delivery estimate, and more. Rich results aren't all-or-nothing. They're tiered, and every additional property you add increases your odds of the enhanced display.</p>
+
+  <p>Here's what separates stores stuck with plain blue links from stores dominating the search results with feature-rich snippets.</p>
+
+  <h2>The Complete Product Schema Hierarchy</h2>
+  <p>Think of product structured data as layers. Each layer adds more information and increases your chances of rich result eligibility.</p>
+
+  <div class="layer-stack">
+    <div class="layer"><div class="layer-num">Layer 1 &middot; Minimum viable</div><p>Product name, description, image, price, availability. Most Shopify themes handle this out of the box.</p></div>
+    <div class="layer"><div class="layer-num">Layer 2 &middot; Recommended</div><p>Brand, SKU, aggregate rating, review count. This is where you start triggering star ratings in search.</p></div>
+    <div class="layer"><div class="layer-num">Layer 3 &middot; Enhanced</div><p>Individual reviews, multiple images, product identifiers (GTIN/MPN), price valid until, offers with detailed attributes.</p></div>
+    <div class="layer"><div class="layer-num">Layer 4 &middot; Maximum</div><p>Shipping details, return policy, merchant listing experiences, product variants as individual offers, FAQ schema on product pages.</p></div>
+  </div>
+  <p>Most stores are stuck at Layer 1. Getting to Layer 3 or 4 is where the real competitive advantage sits.</p>
+
+  <h2>Adding Review Schema That Actually Triggers Stars</h2>
+  <p>Star ratings are the most visible rich result enhancement there is, and they tend to lift click-through rate by somewhere in the 15-25% range. Getting them means structuring your review data properly.</p>
+  <p>What Google needs: an <code>aggregateRating</code> object with:</p>
+  <ul>
+    <li><code>ratingValue</code>, the overall score, e.g. 4.8</li>
+    <li><code>reviewCount</code>, total number of reviews</li>
+    <li><code>bestRating</code>, usually 5</li>
+    <li><code>worstRating</code>, usually 1</li>
+  </ul>
+  <p>Plus individual review entries with <code>author</code>, <code>datePublished</code>, <code>reviewRating</code>, and <code>reviewBody</code>.</p>
+  <p>The catch on Shopify: your reviews almost certainly live in a third-party app. Some of these apps add review schema automatically, some don't, and some add it but get it wrong.</p>
+  <p>How to check: run a product page through Google's Rich Results Test and look for "Review snippet" in the detected items. If it's missing, your review app either isn't adding schema at all, or it's malformed.</p>
+  <p>The fix: check your review app's settings for a "structured data" or "schema markup" toggle and enable it. If the app doesn't support schema natively, you'll need to add it yourself through theme code that pulls from the app's review data.</p>
+
+  <h2>Shipping Details Schema</h2>
+  <p>Google's Product schema supports <code>shippingDetails</code>. Implemented properly, your listing can show estimated delivery times and shipping costs before anyone even clicks, which builds confidence at exactly the moment it matters.</p>
+  <p>The <code>shippingDetails</code> object covers:</p>
+  <ul>
+    <li>Shipping destination (country, region)</li>
+    <li>Delivery time (minimum and maximum days)</li>
+    <li>Shipping cost (amount and currency)</li>
+    <li>Free shipping threshold, if you have one</li>
+  </ul>
+  <p>Say you ship to the US in 3-5 business days with free shipping over $75, with that in your structured data, Google can display "Free delivery" or "Delivers in 3-5 days" right in the result.</p>
+  <p>This one takes custom Liquid code, since Shopify themes don't ship with shipping schema by default. You'll either hardcode your shipping policy into the schema or build dynamic logic tied to your shipping rate settings.</p>
+
+  <h2>Return Policy Schema</h2>
+  <p><code>hasMerchantReturnPolicy</code> tells Google your return terms. Shoppers who see "Free 30-day returns" sitting right in the search result click through with more confidence.</p>
+  <p>It covers return policy type (free, paid, or none), return period, return method, and any return fees. Like shipping schema, this needs custom implementation, build the return policy object and reference it inside your Product schema's offers section.</p>
+
+  <h2>Product Variant Schema</h2>
+  <p>This is where most stores leave real value on the table. If a product has variants at different price points, size-based pricing, say, basic schema only ever shows a single price. Google can instead display a range, like "$39-$69," which is both more accurate and more likely to catch a shopper's eye.</p>
+  <p>Use <code>AggregateOffer</code> instead of a single <code>Offer</code> whenever variants carry different prices: <code>lowPrice</code>, <code>highPrice</code>, <code>offerCount</code>, and <code>priceCurrency</code>. If every variant is priced the same, stick with a single <code>Offer</code>, <code>AggregateOffer</code> is only worth the extra work when there's real price variation to show.</p>
+
+  <h2>FAQ Schema on Product Pages</h2>
+  <p>This one's a genuine power move. FAQ schema on a product page can surface expandable questions and answers directly in the search result, taking up considerably more visual real estate than a standard listing.</p>
+  <p>The questions should be real ones customers actually ask about that specific product, not generic filler:</p>
+  <ul>
+    <li>"What's the difference between size M and L?"</li>
+    <li>"Is this safe for sensitive skin?"</li>
+    <li>"How long does shipping take?"</li>
+    <li>"What's the return policy on this item?"</li>
+  </ul>
+  <p>Each entry needs a question and an answer. When Google displays them, your listing can end up taking 3-4x more vertical space than a competitor's, which is a meaningful edge on click probability.</p>
+  <p>Build the FAQ section into the product page template itself, visible to shoppers, and mirror it with <code>FAQPage</code> schema. The visible FAQ helps the page convert. The schema helps it get found. You get both for the same piece of content.</p>
+
+  <h2>Breadcrumb Schema</h2>
+  <p><code>BreadcrumbList</code> schema tells Google the hierarchical path to a product, home, category, subcategory, product. Displayed in search, breadcrumbs replace a raw URL with something readable.</p>
+  <p>Instead of a URL string like <code>/products/organic-cotton-tshirt-navy</code>, a shopper sees something like Women's / T-Shirts / Organic Cotton Tee. Cleaner, more context, and it tells searchers exactly where the product sits in your catalog before they even click.</p>
+  <p>Most Shopify themes show breadcrumbs visually on the page but don't add the matching structured data, that part you have to add separately.</p>
+
+  <h2>Testing and Validation Strategy</h2>
+  <p>Don't guess whether any of this is actually working. Test it.</p>
+  <p><strong>Right after implementation:</strong> run 10 product pages through Google's Rich Results Test. Check for product rich result eligibility, any errors that need fixing, any warnings worth addressing, and which specific features are eligible: review snippets, price, availability.</p>
+  <p><strong>After 2-4 weeks:</strong> check Search Console under Enhancements for product snippets, review snippets, and any new issues.</p>
+  <p><strong>Monthly:</strong> spot-check five product pages through URL Inspection to confirm the rich result is still active and nothing new has broken.</p>
+  <p><strong>After any catalog change:</strong> new product types, new pricing structures, a switch in review apps, re-validate. Schema that worked fine for your old products won't necessarily hold up for new ones with a different data shape.</p>
+
+  <h2>The Competitive Advantage</h2>
+  <p>Look at your competitors' listings. How many show star ratings, prices, availability badges? In most e-commerce categories it's a minority, often under a third of results carry the full rich treatment. Which means getting your structured data complete puts you in the group that actually stands out visually on the page.</p>
+  <p>The lift in click-through rate isn't marginal, either: 20-30% more clicks is a realistic range. Spread across a full product catalog, that's meaningful organic traffic gained without writing a single new piece of content or building a single link.</p>
+
+  <h2>What To Do Right Now</h2>
+  <p>Pick your three highest-revenue products. Run them through Google's Rich Results Test today and note every warning and error.</p>
+  <p>Then check the basics: does the schema show review data? Shipping details? Return policy? Wherever any of these are missing, that's your next optimization, and usually the fastest win available on a product page you already have traffic hitting.</p>
+
+  <div class="callout">
+    <p>Complete structured data won't write a single word of new content or earn a single new link, but it's often the fastest lift available on pages you already rank for.</p>
+  </div>
+
+  <div class="cta">
+    <p>Want your product schema audited against all four layers?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="/index.html">joyaljohnson.com</a></footer>
+</body>
+</html>

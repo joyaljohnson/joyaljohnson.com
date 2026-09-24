@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breadcrumbs on Shopify: Setup and SEO Impact | Joyal Johnson</title>
+<meta name="description" content="Breadcrumbs only do their full SEO job when the visual trail and the matching BreadcrumbList schema are both in place. Most stores only have one. Here's how to get both right.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0e0f16;font-family:Inter,system-ui,sans-serif;color:#e9e9ed}
+a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(22,24,38,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(233,233,237,.08)}
+header a.back{color:rgba(233,233,237,.7);text-decoration:none;font-size:13.5px}
+header a.back:hover{color:#e9e9ed}
+header .brand{font-weight:500;font-size:15px;letter-spacing:-.01em;color:#e9e9ed;text-decoration:none}
+article{padding:64px 0 96px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d2cefd;margin-bottom:18px}
+h1{margin:0 0 18px;font-size:38px;line-height:1.18;letter-spacing:-.03em;font-weight:500}
+@media (max-width:600px){ h1{font-size:28px} }
+.meta{font-size:13px;color:rgba(233,233,237,.45);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid rgba(233,233,237,.08)}
+.lede{font-size:19px;line-height:1.6;color:rgba(233,233,237,.8);margin:0 0 40px}
+h2{margin:48px 0 18px;font-size:26px;letter-spacing:-.02em;font-weight:500;color:#fff}
+h3{margin:32px 0 10px;font-size:18px;font-weight:500;color:#fff}
+p{font-size:16px;line-height:1.75;color:rgba(233,233,237,.72);margin:0 0 20px}
+ul,ol{margin:0 0 24px;padding-left:22px}
+li{font-size:16px;line-height:1.7;color:rgba(233,233,237,.72);margin-bottom:10px}
+li::marker{color:#9184d9}
+strong{color:#e9e9ed;font-weight:600}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#1a1c2b;border:1px solid rgba(233,233,237,.12);border-radius:4px;padding:1px 6px;color:#d2cefd}
+pre{margin:0 0 24px;padding:20px;border-radius:10px;background:#12131d;border:1px solid rgba(233,233,237,.1);overflow-x:auto}
+pre code{background:none;border:none;padding:0;color:#c9c6dd;font-size:13.5px;line-height:1.6}
+.breadcrumb-demo{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:20px 0 24px;padding:14px 18px;border-radius:8px;background:#1a1c2b;border:1px solid rgba(233,233,237,.1);font-size:14px;color:rgba(233,233,237,.6)}
+.breadcrumb-demo span{color:#d2cefd}
+.breadcrumb-demo .sep{color:rgba(233,233,237,.3)}
+.callout{margin:40px 0;padding:24px 28px;border-radius:10px;background:#1a1c2b;border:1px solid rgba(233,233,237,.1)}
+.callout p{margin:0;color:rgba(233,233,237,.8)}
+.cta{margin-top:56px;padding:32px;border-radius:10px;background:linear-gradient(180deg,#1a1c2b,#161826);border:1px solid rgba(233,233,237,.08);text-align:center}
+.cta p{margin:0 0 18px;color:rgba(233,233,237,.7)}
+.cta a{display:inline-flex;font-size:14px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:11.2px 22.4px;text-decoration:none}
+.cta a:hover{background:rgba(145,132,217,.14)}
+footer{padding:32px 44px;border-top:1px solid rgba(233,233,237,.08);text-align:center;font-size:12px;color:rgba(233,233,237,.4)}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/blog/index.html">&larr; Blogs</a>
+  <a class="brand" href="/index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">AI &amp; SEO Search</div>
+  <h1>Breadcrumbs on Shopify: Setup and SEO Impact</h1>
+  <div class="meta">Joyal Johnson &middot; Aug 14, 2026</div>
+
+  <p class="lede">Breadcrumbs are one of those features that everyone half-notices and almost nobody optimizes. That little trail near the top of a product page, Home / Women's / T-Shirts / Organic Cotton Tee, looks like a minor navigation courtesy. On Shopify, done properly, it's also a small but real SEO lever, and most stores are only using half of it.</p>
+
+  <div class="breadcrumb-demo">Home <span class="sep">/</span> <span>Women's</span> <span class="sep">/</span> <span>T-Shirts</span> <span class="sep">/</span> <span>Organic Cotton Tee</span></div>
+
+  <h2>Why breadcrumbs matter for SEO</h2>
+
+  <p><strong>They can replace your raw URL in search results.</strong> Instead of a shopper seeing <code>yourstore.com/products/organic-cotton-tshirt-navy</code> under your listing, Google can show the breadcrumb trail instead, something like Women's &rsaquo; T-Shirts &rsaquo; Organic Cotton Tee. It's cleaner, it gives context before the click, and it tells the searcher exactly where the product sits in your catalog.</p>
+
+  <p><strong>They reinforce internal linking.</strong> Every breadcrumb is a link back up the hierarchy, product to subcategory to category to home. That's a consistent, logical linking pattern running through your entire catalog, and it's the kind of internal link structure that's easy to get right once and then forget about.</p>
+
+  <p><strong>They help Google understand your category structure.</strong> A crawler following breadcrumb paths gets a much clearer picture of how your products relate to each other than one relying on your nav menu or sitemap alone.</p>
+
+  <p><strong>They reduce bounce.</strong> If someone lands on a product page from search and it's not quite what they wanted, a breadcrumb gives them an obvious next step, up a level to the category, instead of back to Google.</p>
+
+  <p>None of these are individually dramatic. Together, across a full catalog, they add up.</p>
+
+  <h2>The two pieces you need</h2>
+  <p>Breadcrumbs only do their full job when two separate things are both in place, and this is where most stores fall short, usually because they've got one and assume it covers the other.</p>
+
+  <p><strong>Visual breadcrumbs.</strong> The trail a shopper actually sees and can click through on the page itself. Most Online Store 2.0 themes include this out of the box, though it's sometimes buried in theme settings rather than on by default, worth checking rather than assuming.</p>
+
+  <p><strong>Structured data.</strong> <code>BreadcrumbList</code> schema, added as JSON-LD, is what tells Google the same hierarchy in a machine-readable format. This is the part that actually makes the breadcrumb trail eligible to appear in search results in place of your URL. Visual breadcrumbs alone don't do that, Google needs the schema to know it's looking at a breadcrumb path rather than just a row of links.</p>
+
+  <p>A basic version looks like this:</p>
+
+<pre><code>{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://yourstore.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Women's",
+      "item": "https://yourstore.com/collections/womens"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "T-Shirts",
+      "item": "https://yourstore.com/collections/womens-tshirts"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Organic Cotton Tee"
+    }
+  ]
+}</code></pre>
+
+  <p>Note the last item, the current page, doesn't need an <code>item</code> URL, since it's not a link.</p>
+
+  <h2>Getting it implemented</h2>
+  <p>Start by checking what you've already got. Open a product page and look for the visual trail near the top. If it's there, good, move on to checking the schema. If it isn't, check your theme's settings first; a lot of themes have breadcrumbs available but toggled off, which is a five-minute fix rather than a development job.</p>
+  <p>For the schema side, you're either adding a JSON-LD script through your theme's product template (or a snippet included on it), or using an app that generates structured data for you. Several SEO apps in the Shopify ecosystem handle this alongside product and review schema, which is worth knowing if you're already running one for other markup.</p>
+  <p>Whichever route you take, verify it. Run the product URL through Google's Rich Results Test and confirm <code>BreadcrumbList</code> shows up as a detected item with no errors. Don't assume it worked just because you added the code, I've seen plenty of cases where a theme update or an app conflict quietly breaks schema that was working fine the month before.</p>
+
+  <h2>Getting the hierarchy right</h2>
+  <p>The trail itself matters as much as the fact that it exists.</p>
+
+  <p><strong>Keep it to the shortest logical path.</strong> Home to category to product is usually enough. Piling on extra subcategory levels because your catalog structure technically supports it just adds friction without adding clarity.</p>
+
+  <p><strong>Use real category names, not filler.</strong> "Products" or "Shop" as a breadcrumb level tells nobody anything. "Women's" or "Running Shoes" does. This is also where you get a small, natural opportunity to work a relevant keyword into an internal link, use it.</p>
+
+  <p><strong>Make every level clickable except the current page.</strong> That's the whole point of a breadcrumb, it's navigation, not just a label. A trail where the middle links don't actually go anywhere defeats the purpose.</p>
+
+  <p><strong>Keep it consistent.</strong> If a product lives in more than one collection, pick a primary path and use it everywhere that product appears, rather than showing a different trail depending on how someone arrived at the page. Inconsistent paths across pages are confusing for shoppers and muddy the signal you're sending search engines about your actual category structure.</p>
+
+  <h2>Common mistakes worth checking for</h2>
+  <p>A handful of issues show up again and again when I audit breadcrumb setups:</p>
+  <ul>
+    <li>Generic category names that add a level without adding meaning ("Products," "Items," "Shop")</li>
+    <li>Inconsistent paths for the same product depending on entry point</li>
+    <li>Visual breadcrumbs with no matching schema, so the trail never has a chance to show up in search results</li>
+    <li>Broken links within the trail itself, easy to miss since breadcrumbs rarely get manually tested after launch</li>
+    <li>Mismatches between what's shown on the page and what the schema says, usually the result of one being updated after a catalog restructure and the other being forgotten</li>
+  </ul>
+  <p>That last one is sneaky. If you ever reorganize collections, it's worth re-checking both the visual breadcrumbs and the schema together, since it's easy to update one and not the other.</p>
+
+  <h2>Handling mobile</h2>
+  <p>Long category names on a four- or five-level trail can get cramped fast on a small screen. Most themes either truncate the middle of the trail (showing Home / &hellip; / Organic Cotton Tee) or let it scroll horizontally. Either is fine, what matters is that it doesn't wrap awkwardly or overlap other page elements. Worth an actual look on a phone rather than just trusting the theme preview.</p>
+
+  <h2>Keeping an eye on it</h2>
+  <p>Once it's live, check Search Console's Enhancements section periodically for breadcrumb detection and any reported errors. It's not something that needs daily attention, but it's worth a glance after any theme update, app change, or catalog restructure, those are the moments schema quietly breaks.</p>
+
+  <h2>Where to start</h2>
+  <p>If you're not sure where your store stands, check one product page for the visual trail, then run that same page through Google's Rich Results Test for the schema.</p>
+
+  <div class="callout">
+    <p>Whichever piece is missing, visual or structured data, is your next fix, and neither one takes long to put right once you know what's missing.</p>
+  </div>
+
+  <div class="cta">
+    <p>Want your breadcrumb setup checked, visual and schema both?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="/index.html">joyaljohnson.com</a></footer>
+</body>
+</html>

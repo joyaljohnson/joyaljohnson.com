@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apple Just Turned Siri Into a Shopping Engine | Joyal Johnson</title>
+<meta name="description" content="Siri AI is conversational, takes action across apps, and runs on Gemini and Google's Shopping Graph. Here's what to fix in your Merchant Center feed and product data this quarter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+<body>
+<header>
+  <a class="back" href="/blog/index.html">&larr; Blogs</a>
+  <a class="brand" href="/index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">AI &amp; SEO Search</div>
+  <h1>Apple Just Turned Siri Into a Shopping Engine</h1>
+  <div class="meta">Joyal Johnson &middot; Aug 22, 2026</div>
+
+  <p class="lede">At WWDC 2026, Apple unveiled the biggest update to Siri since its original launch: Siri AI, a fully conversational assistant that holds multi-turn conversations, takes action across apps, and, quietly, has become a shopping engine. It's powered by Google's Gemini, and the Shopping Graph it queries runs primarily on Google Merchant Center data, supplemented by what Google crawls across the open web.</p>
+
+  <p>Visual intelligence turns any photo or screenshot into a shopping catalog, point a phone at someone's jacket and Siri can identify it, find sellers, and let you buy. Translation: every iPhone user is now a shopping search engine. The brands findable inside that engine win the next wave of mobile-first discovery. The brands not findable are invisible to a generation of buyers who never open a browser tab.</p>
+
+  <h2>What actually shipped</h2>
+  <p><strong>Siri AI is conversational and takes action across apps.</strong> Multi-turn conversations, context retention across queries, real-time world knowledge, and the ability to execute compound requests, "find me a brown leather wallet under $80 with good reviews and add it to my cart," end to end. For DTC merchants, voice queries are about to become a real discovery surface, likely within the next 12&ndash;18 months as adoption scales across the iPhone install base.</p>
+  <p><strong>Gemini powers Siri's shopping intelligence.</strong> Apple partnered with Google to provide the intelligence layer behind Siri's shopping queries, Gemini handles language understanding, Google's Shopping Graph provides the product data. That means visibility inside Siri shopping queries is heavily determined by how products appear in Google Shopping, which is determined by the Google Merchant Center feed, something most DTC brands configure once at a basic level and never touch again.</p>
+  <p><strong>Visual intelligence turns every camera shot into a shopping query.</strong> The iPhone camera, and any saved photo or screenshot, is now a shopping search tool. For brands with visually distinctive products, apparel, footwear, jewelry, home goods, beauty, accessories, this is a real opportunity and a real risk simultaneously: brands whose products sit in Google's Shopping Graph with rich imagery get found; brands that aren't in the graph don't exist for visual queries at all.</p>
+
+  <h2>What to fix this quarter</h2>
+  <p><strong>Audit the Google Merchant Center feed completely.</strong> Most Shopify brands install the default Google &amp; YouTube channel app, accept whatever fields it auto-fills, and never look again. The fields that determine Siri AI visibility: a human-readable title rather than a keyword-stuffed string, an actually useful description rather than marketing copy, high-resolution images from multiple angles with a clean background, real GTIN identifiers, a consistent brand name across every SKU, Google's specific product category taxonomy rather than internal categories, and accurate real-time price and availability. It's common to find a large share of these attributes missing or wrong across a catalog, fixing them takes a few hours and the visibility lift is meaningful.</p>
+  <p><strong>Optimize product images for visual search.</strong> Visual intelligence pattern-matches against image databases, and the images that get found well share characteristics: clean white or neutral backgrounds on hero shots, multiple angles (front, side, back, detail), in-context lifestyle shots for products that benefit from them, consistent lighting and resolution across the catalog, and proper alt text on every image. Messy, inconsistent product photography gets meaningfully less visual-search visibility.</p>
+  <p><strong>Expose on-site reviews in structured data.</strong> Siri AI surfaces aggregated review data when comparing products, but only if it can actually reach them. Reviews on third-party platforms with JavaScript-only rendering don't get indexed by Gemini. Reviews rendered server-side with proper <code>Review</code> and <code>AggregateRating</code> schema do get pulled into comparison answers.</p>
+  <p><strong>Make sure the product page itself is AI-readable.</strong> The page needs to read like a buyer's guide entry, not a marketing brochure, a clear answer to what the product is, who it's for, and what makes it different, all within the first hundred words. This is the same underlying framework that helps across every AI surface: definitive answers early, proper schema markup, entity-based structure. Build it once and it works for Siri AI, ChatGPT, Perplexity, and Google AI Overviews alike.</p>
+  <p><strong>Build a real citation footprint.</strong> Brands cited by sources Gemini trusts, review sites, comparison content, niche communities, podcasts, Wikipedia where relevant, get more confident inclusion in Siri shopping answers. A brand with no citation footprint outside its own marketing gets fewer mentions, simple as that. This kind of brand-building work compounds across every AI discovery surface and is worth treating as a genuine twelve-month investment rather than a one-off push.</p>
+
+  <h2>The pattern across every AI shopping surface</h2>
+  <p>The Apple Intelligence shopping layer is one piece of a much bigger shift that also includes ChatGPT's product discovery features, agentic commerce tooling from OpenAI and others, and Google's own AI Overviews. The pattern holds across all of them: brands with clean data, structured content, on-site reviews, and a real citation footprint show up across every surface at once. Brands without it disappear from all of them simultaneously.</p>
+
+  <h2>Five concrete moves for the quarter</h2>
+  <p>Audit the Google Merchant Center feed field by field across every SKU, most brands find a meaningful share of attributes missing or wrong. Audit product photography for consistency, multiple angles, alt text, and structured data. Verify on-site reviews are server-rendered with proper <code>Review</code> and <code>AggregateRating</code> schema. Run an AI-readability test on the top twenty products, would a buyer's-guide reader find the answer to "is this for me?" in the first hundred words? And map the citation footprint: count how many third-party sources actually mention the brand, and treat a low number as an active gap to close rather than background noise.</p>
+
+  <div class="callout">
+    <p>Apple Intelligence isn't a future technology, it shipped in beta at WWDC 2026 and will be on every iPhone running the next major iOS release by the holiday season. Every iPhone user becomes a voice-and-vision shopping search engine. The brands inside Google's Shopping Graph win. The brands not inside it don't exist. None of the work to get there is glamorous, product data, photography, reviews, schema, citation footprint, but it's the work that determines whether a brand survives the next platform shift.</p>
+  </div>
+
+  <div class="cta">
+    <p>Want your Merchant Center feed and product data audited before the holiday iOS release?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="/index.html">joyaljohnson.com</a></footer>
+</body>
+</html>

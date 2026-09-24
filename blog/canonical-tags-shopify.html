@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canonical Tags on Shopify: How They Work and When They Break | Joyal Johnson</title>
+<meta name="description" content="Shopify handles canonical tags automatically on most page types, but the exceptions quietly cost rankings because a wrong canonical never throws an obvious error. Here's where to check.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0e0f16;font-family:Inter,system-ui,sans-serif;color:#e9e9ed}
+a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(22,24,38,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(233,233,237,.08)}
+header a.back{color:rgba(233,233,237,.7);text-decoration:none;font-size:13.5px}
+header a.back:hover{color:#e9e9ed}
+header .brand{font-weight:500;font-size:15px;letter-spacing:-.01em;color:#e9e9ed;text-decoration:none}
+article{padding:64px 0 96px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d2cefd;margin-bottom:18px}
+h1{margin:0 0 18px;font-size:36px;line-height:1.2;letter-spacing:-.03em;font-weight:500}
+@media (max-width:600px){ h1{font-size:26px} }
+.meta{font-size:13px;color:rgba(233,233,237,.45);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid rgba(233,233,237,.08)}
+.lede{font-size:19px;line-height:1.6;color:rgba(233,233,237,.8);margin:0 0 40px}
+h2{margin:48px 0 18px;font-size:26px;letter-spacing:-.02em;font-weight:500;color:#fff}
+h3{margin:32px 0 10px;font-size:18px;font-weight:500;color:#fff}
+p{font-size:16px;line-height:1.75;color:rgba(233,233,237,.72);margin:0 0 20px}
+ul,ol{margin:0 0 24px;padding-left:22px}
+li{font-size:16px;line-height:1.7;color:rgba(233,233,237,.72);margin-bottom:10px}
+li::marker{color:#9184d9}
+strong{color:#e9e9ed;font-weight:600}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#1a1c2b;border:1px solid rgba(233,233,237,.12);border-radius:4px;padding:1px 6px;color:#d2cefd}
+.compare{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0 24px}
+@media (min-width:600px){ .compare{grid-template-columns:1fr 1fr} }
+.compare .item{padding:16px 18px;border-radius:8px;font-size:14.5px;line-height:1.6;background:#1a1c2b;border:1px solid rgba(233,233,237,.12);color:rgba(233,233,237,.75)}
+.compare .item .tag{display:block;font:600 10.5px ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;color:#d2cefd}
+.callout{margin:40px 0;padding:24px 28px;border-radius:10px;background:#1a1c2b;border:1px solid rgba(233,233,237,.1)}
+.callout p{margin:0;color:rgba(233,233,237,.8)}
+.cta{margin-top:56px;padding:32px;border-radius:10px;background:linear-gradient(180deg,#1a1c2b,#161826);border:1px solid rgba(233,233,237,.08);text-align:center}
+.cta p{margin:0 0 18px;color:rgba(233,233,237,.7)}
+.cta a{display:inline-flex;font-size:14px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:11.2px 22.4px;text-decoration:none}
+.cta a:hover{background:rgba(145,132,217,.14)}
+footer{padding:32px 44px;border-top:1px solid rgba(233,233,237,.08);text-align:center;font-size:12px;color:rgba(233,233,237,.4)}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/blog/index.html">&larr; Blogs</a>
+  <a class="brand" href="/index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">AI &amp; SEO Search</div>
+  <h1>Canonical Tags on Shopify: How They Work and When They Break</h1>
+  <div class="meta">Joyal Johnson &middot; Aug 16, 2026</div>
+
+  <p class="lede">Canonical tags tell Google which version of a page is the "official" one when multiple URLs show similar or identical content. On Shopify, that situation comes up constantly, products living at more than one URL, filtered collection pages, paginated content.</p>
+
+  <p>Shopify handles canonicals automatically on most page types, but the exceptions are the ones that quietly cost you rankings, because nothing about a wrong canonical throws an obvious error. The page just doesn't show up where it should.</p>
+
+  <h2>How Shopify Handles Canonicals By Default</h2>
+  <p>Out of the box, Shopify assigns canonical tags with different logic depending on page type:</p>
+  <ul>
+    <li>Product pages canonicalize to <code>/products/product-handle</code>, no matter which path a visitor used to land there</li>
+    <li>Collection pages point to the clean collection URL, stripped of sort and filter parameters</li>
+    <li>Blog posts canonicalize to <code>/blogs/blog-name/post-handle</code></li>
+    <li>Static pages point to <code>/pages/page-handle</code></li>
+    <li>Paginated pages self-canonicalize, page 2 points to itself, not back to page 1</li>
+    <li>The homepage canonicalizes with consistent trailing-slash handling</li>
+  </ul>
+  <p>For the vast majority of pages on a standard theme, this just works and you never have to think about it.</p>
+
+  <h2>Where Canonicals Actually Go Wrong</h2>
+
+  <p><strong>Collection-filtered product URLs getting indexed anyway.</strong> Google sometimes indexes both <code>/collections/category/products/item-name</code> and <code>/products/item-name</code>, even with the canonical pointing the right way. When that happens, click and impression data splits across two entries instead of consolidating on one, which makes the page look weaker in Search Console than it actually is. The fix is to make sure every internal link, nav, related products, blog content, points to the clean <code>/products/</code> URL, and to check your sitemap only lists the canonical version.</p>
+
+  <p><strong>URL parameters that don't inherit the canonical properly.</strong> Tracking parameters added by marketing tools or third-party apps can sometimes create a page variant that doesn't carry the right canonical signal. Audit a sample of product pages with different parameter combinations attached and see what canonical tag each one actually renders. If an app is the culprit, that's a conversation with the app developer or a theme-level override.</p>
+
+  <p><strong>Old domains or subdomains still sitting around.</strong> A legacy domain, a development store URL, a staging environment that never got locked down, any of these can end up indexed alongside your live site as a duplicate. Turn on "Redirect all traffic to primary domain" in your domain settings, and make sure any non-primary domain is issuing proper 301s rather than just quietly resolving.</p>
+
+  <p><strong>Multi-currency and multi-region duplicates.</strong> If you're running Shopify Markets, every localized version of a page needs both a self-referencing canonical and correct hreflang tags pointing to its equivalents in other locales. Skip the hreflang piece and you're relying on canonicals alone to sort out what's genuinely duplicate content versus what's a legitimate regional variant, which they can't do on their own.</p>
+
+  <p><strong>Tag pages and filtered collections.</strong> URLs like <code>/collections/category/tag-name</code> frequently amount to near-duplicate content with barely any of their own value. Either noindex the thin ones or, if a tag page genuinely earns its place with unique content, keep it, just don't leave a pile of thin tag pages sitting in the index by default.</p>
+
+  <h2>Auditing Your Own Canonicals</h2>
+
+  <p><strong>Crawl the site.</strong> Screaming Frog or Sitebulb both work well here. You're checking that every page has a canonical tag, that product pages point to <code>/products/</code> URLs, that collection pages reference parameter-free URLs, and that nothing is cross-canonicalizing to the wrong page entirely.</p>
+
+  <p><strong>Check Google Search Console's Indexing report.</strong> "Alternate page with proper canonical tag" is expected and fine, that's the system working as intended. "Duplicate without user-selected canonical" is the one worth digging into, because it means Google found duplicates and picked a version on its own rather than following a signal you set.</p>
+
+  <p><strong>Manually spot-check a handful of product pages.</strong> Visit the same five products through different paths, direct link, collection page, search, and confirm the canonical tag stays consistent no matter how you got there.</p>
+
+  <h2>When It's Actually Worth Overriding the Default</h2>
+  <p>Shopify's defaults are right for something like 95% of pages, so overriding them should be the exception, not a first move. The legitimate cases:</p>
+  <ul>
+    <li>Consolidating near-duplicate products, redirecting an old product URL, or adding a theme-level canonical override for cases the default logic doesn't handle</li>
+    <li>Cross-domain canonicalization, usually a marketplace or multi-storefront settings question rather than something you solve in theme code</li>
+    <li>Syndicated content, anything republished elsewhere should canonicalize back to your original</li>
+  </ul>
+  <p>Get an override wrong and you can deindex a page that was ranking fine. Before touching theme-level canonical logic, be confident you understand exactly which pages the change will affect.</p>
+  <p>Overrides live in <code>theme.liquid</code> or the relevant layout file, as conditional logic that swaps out Shopify's <code>canonical_url</code> variable for specific page types while leaving the automatic behavior untouched everywhere else.</p>
+
+  <h2>Canonical Tags vs. 301 Redirects</h2>
+  <p>These get confused constantly, and they solve different problems:</p>
+  <div class="compare">
+    <div class="item"><span class="tag">Canonical tag</span>Use when both pages need to stay live and accessible, but you only want one of them showing up in search results.</div>
+    <div class="item"><span class="tag">301 redirect</span>Use when the old page is genuinely obsolete, you want visitors and link equity sent to the new URL permanently, with nothing left behind at the old address.</div>
+  </div>
+
+  <h2>Quick Action Steps</h2>
+  <ol>
+    <li>View source on your homepage, a product page, and a collection page</li>
+    <li>Search the page source for "canonical" and confirm each one points to a clean URL</li>
+    <li>Open the Pages report under Indexing in Search Console and look for duplicate-content flags</li>
+  </ol>
+
+  <div class="callout">
+    <p>Canonical tags are one of those pieces of technical SEO that work invisibly until they don't, and by the time you notice, you've usually already lost some indexing and ranking ground. Worth checking every few months, not just once and forgetting about it.</p>
+  </div>
+
+  <div class="cta">
+    <p>Want your canonical setup audited before it costs you rankings?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="/index.html">joyaljohnson.com</a></footer>
+</body>
+</html>

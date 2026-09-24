@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Migrate to Shopify Without Losing SEO Rankings | Joyal Johnson</title>
+<meta name="description" content="Brands regularly lose 40-60% of organic traffic overnight during a Shopify migration. It's preventable. Here's the URL mapping, redirect, and metadata plan that avoids it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+<body>
+<header>
+  <a class="back" href="/blog/index.html">&larr; Blogs</a>
+  <a class="brand" href="/index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">AI &amp; SEO Search</div>
+  <h1>How to Migrate to Shopify Without Losing SEO Rankings</h1>
+  <div class="meta">Joyal Johnson &middot; Aug 24, 2026</div>
+
+  <p class="lede">Brands regularly lose 40&ndash;60% of their organic traffic overnight during a migration to Shopify, and it's one of the most preventable disasters in eCommerce, it happens because redirects, URL structure, and metadata weren't handled properly, not because migrating platforms is inherently risky.</p>
+
+  <p>The good news: done right, a migration to Shopify can maintain, sometimes even improve, rankings. The bad news: there are roughly thirty things that can go wrong, and most migration plans only account for about five of them.</p>
+
+  <h2>Why migrations kill SEO when they go wrong</h2>
+  <p>Google has indexed the current site, its URLs, page titles, content, internal link structure, and domain authority signals. Migrating platforms can break every one of those at once. Three failure modes cause most of the damage.</p>
+  <p><strong>URL changes without redirects.</strong> An old URL like <code>/products/blue-running-shoes</code> might become <code>/products/blue-running-shoes-1</code> or get nested under a collection path on Shopify. Google follows the old URL, hits a 404, and drops the page from the index, multiplied across every product and collection page that changed.</p>
+  <p><strong>Metadata gets wiped.</strong> Carefully written title tags and meta descriptions on the old platform get replaced by Shopify's auto-generated versions, built from the product name and the first few words of the description. All of that prior optimization disappears unless it's deliberately carried over.</p>
+  <p><strong>Internal link structure changes.</strong> The old site's link hierarchy, which passed authority between pages in a specific pattern, doesn't map cleanly onto Shopify's default structure. Internal links break, link equity stops flowing, and pages that used to rank well lose the signals that got them there.</p>
+
+  <h2>The pre-migration checklist</h2>
+  <p><strong>Step 1: Crawl the existing site completely.</strong> Use Screaming Frog, Sitebulb, or a similar tool to crawl every URL, products, collections, pages, blog posts, and export page titles, meta descriptions, H1 tags, internal link patterns, canonical tags, existing 301 redirects, top-traffic pages (from Search Console or analytics), and top-backlink pages (from Ahrefs or Semrush). This becomes the migration map, every URL needs to be accounted for.</p>
+  <p><strong>Step 2: Identify the high-value pages.</strong> Not every page deserves equal attention. Pull the pages with the most impressions, the most clicks, and the best keyword positions from Search Console, and the pages with the most referring domains and highest-authority backlinks from a backlink tool. These are the VIP pages, they get priority in URL mapping, redirects, and metadata migration.</p>
+  <p><strong>Step 3: Map every old URL to a new Shopify URL.</strong> This is the most tedious step and the most important one. Build a spreadsheet with old URL, new Shopify URL, old and new page titles, old and new meta descriptions, and a priority tier based on traffic and backlinks. Any URL structure that's changing needs a 301 redirect noted against it.</p>
+  <p>Common patterns when moving to Shopify: WooCommerce's <code>/product/blue-shoes/</code> becomes <code>/products/blue-shoes</code>; Magento's <code>/catalog/product/view/id/123</code> becomes <code>/products/blue-shoes</code>; a custom <code>/shop/footwear/blue-shoes.html</code> becomes <code>/products/blue-shoes</code>; blog posts typically move to <code>/blogs/[blog-handle]/[post-handle]</code>; and category pages become <code>/collections/slug</code>. Shopify forces the <code>/products/</code> and <code>/collections/</code> prefixes, if the old site didn't use them, every URL is changing.</p>
+  <p><strong>Step 4: Plan the redirect strategy.</strong> Every old URL that no longer exists in the same form needs a 301. Product URLs redirect to the new product URL, category URLs to the equivalent collection, blog URLs to the new blog path, old paginated URLs get handled or redirected, and old parameter URLs (<code>?sort=price</code>) can usually just be left to 404. Shopify's built-in redirect tool works but is slow for a large catalog, a bulk redirect app or CSV import handles volume better. The one hard rule: never redirect everything to the homepage. Each page should redirect to its closest real equivalent; if nothing matches exactly, redirect to the most relevant parent page instead.</p>
+  <p><strong>Step 5: Preserve the metadata.</strong> Before launch, every page needs a title tag matching (or improving on) the old optimized version, a matching or improved meta description, one clean H1 per page targeting the primary keyword, and descriptive alt text on every image. Shopify's defaults, product title as page title, first 160 characters of the description as the meta description, are almost never good enough on their own. Write custom ones before launch, not after.</p>
+
+  <h2>Launch day</h2>
+  <p><strong>Set up redirects before going live, not after.</strong> Any gap between the new site going live and redirects being active means Google crawls the site, finds 404s, and starts deindexing, even a few hours of that can cause damage that takes weeks to recover from.</p>
+  <p><strong>Verify the sitemap</strong> at <code>yourdomain.com/sitemap.xml</code>, confirm every important page is included, no old URLs remain, there are no duplicates, and the sitemap isn't blocked by robots.txt. Submit it to Google Search Console immediately.</p>
+  <p><strong>Check robots.txt.</strong> Shopify generates its own; by default it blocks <code>/admin</code>, <code>/cart</code>, <code>/checkouts</code>, and some internal paths, which is fine, just confirm it isn't also blocking collection pages, product pages, or blog posts.</p>
+  <p><strong>Verify canonical tags</strong> are self-referencing everywhere, particularly on product pages with multiple variants, which can generate multiple URLs that all need to canonicalize back to the main product URL.</p>
+  <p><strong>Keep the old platform accessible on a staging URL for 30 days if possible.</strong> It's a reference point for catching any URL missed in the redirect plan, and for verifying metadata and content transferred correctly.</p>
+
+  <h2>The first 30 days</h2>
+  <p><strong>Week 1: monitor everything.</strong> In Search Console, check daily for new crawl errors, 404 spikes, and coverage issues, and watch indexation to confirm new pages are getting indexed. In analytics, compare daily organic traffic against the pre-migration baseline and watch bounce rates on key landing pages for spikes. Manually Google the top ten keywords to confirm the right pages still appear, and test twenty to thirty redirects by hand to confirm they actually work.</p>
+  <p><strong>Week 2: fix what's broken.</strong> Every migration turns something up, redirect chains that need consolidating to a single hop, missing redirects for URLs that weren't mapped, metadata that didn't transfer cleanly, images that lost alt text, and internal links still pointing at old URLs.</p>
+  <p><strong>Weeks 3&ndash;4: resubmit and rebuild.</strong> Resubmit the sitemap to Search Console, request indexing for anything important that isn't indexed yet, update any external links under your own control (social profiles, directory listings, partner sites), reach out to sites linking to old URLs about updating them where the link is high-value, and publish new content to signal freshness.</p>
+
+  <h2>Shopify-specific issues worth watching</h2>
+  <p><strong>The collection-plus-product URL duplication problem.</strong> Shopify can generate two URLs for the same product (<code>/products/blue-shoes</code> and a collection-nested version). Canonical tags should point to the plain <code>/products/</code> version; verify the theme actually does this correctly, since some don't.</p>
+  <p><strong>Pagination.</strong> Collections with a lot of products generate paginated URLs (<code>?page=2</code>) that need to stay crawlable and unblocked; not every theme handles <code>rel=next</code>/<code>rel=prev</code> correctly by default.</p>
+  <p><strong>Speed.</strong> Shopify's hosting is generally fast, but theme choice matters enormously; a heavy theme with twenty apps injecting JavaScript can tank page speed regardless of the underlying platform. Run Lighthouse or PageSpeed Insights on the top pages post-migration and target 90+ on mobile.</p>
+  <p><strong>Structured data.</strong> If the old site had product schema (price, availability, reviews), confirm the new Shopify theme includes equivalent markup; many themes ship with basic product schema but skip review or breadcrumb schema entirely.</p>
+
+  <h2>Realistic timelines</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>100&ndash;500 products</th><th>1,000+ products</th></tr></thead>
+      <tbody>
+        <tr><td>Pre-migration prep</td><td>2&ndash;3 weeks</td><td>4&ndash;6 weeks</td></tr>
+        <tr><td>Execution</td><td>1&ndash;2 days</td><td>1&ndash;3 days</td></tr>
+        <tr><td>Active post-migration monitoring</td><td>4&ndash;6 weeks</td><td>8&ndash;12 weeks</td></tr>
+        <tr><td>Full SEO recovery</td><td>4&ndash;12 weeks</td><td>8&ndash;16 weeks</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Even a well-executed migration usually sees a temporary dip, typically 10&ndash;20% in weeks one and two while Google recrawls everything, recovery beginning by weeks three and four, a return to pre-migration traffic by weeks five to eight, and sometimes traffic exceeding the old baseline by weeks nine to twelve if the new platform's technical SEO is genuinely better. A poorly executed migration looks different: a 40&ndash;60% drop in the first two weeks, a slow and painful recovery through weeks three to eight, traffic still below baseline at months three to six, and some pages that never fully recover if redirects were missing or done wrong.</p>
+
+  <div class="callout">
+    <p>If organic is a meaningful share of total revenue, this isn't the place to wing it, the cost of getting it wrong is months of lost traffic and revenue, which dwarfs the cost of doing it properly the first time. Every URL mapped, every redirect tested, every meta tag preserved before launch is what separates a clean migration from a six-month recovery.</p>
+  </div>
+
+  <div class="cta">
+    <p>Migrating to Shopify and want the SEO side handled properly?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="/index.html">joyaljohnson.com</a></footer>
+</body>
+</html>

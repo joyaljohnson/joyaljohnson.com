@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopify Robots.txt: What It Actually Controls (and What It Doesn't) | Joyal Johnson</title>
+<meta name="description" content="Robots.txt doesn't remove pages from Google's index and it doesn't guarantee bots listen. Here's what Shopify's default file actually does, when to customize it, and what never to touch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0e0f16;font-family:Inter,system-ui,sans-serif;color:#e9e9ed}
+a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(22,24,38,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(233,233,237,.08)}
+header a.back{color:rgba(233,233,237,.7);text-decoration:none;font-size:13.5px}
+header a.back:hover{color:#e9e9ed}
+header .brand{font-weight:500;font-size:15px;letter-spacing:-.01em;color:#e9e9ed;text-decoration:none}
+article{padding:64px 0 96px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d2cefd;margin-bottom:18px}
+h1{margin:0 0 18px;font-size:36px;line-height:1.2;letter-spacing:-.03em;font-weight:500}
+@media (max-width:600px){ h1{font-size:26px} }
+.meta{font-size:13px;color:rgba(233,233,237,.45);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid rgba(233,233,237,.08)}
+.lede{font-size:19px;line-height:1.6;color:rgba(233,233,237,.8);margin:0 0 40px}
+h2{margin:48px 0 18px;font-size:26px;letter-spacing:-.02em;font-weight:500;color:#fff}
+h3{margin:32px 0 10px;font-size:18px;font-weight:500;color:#fff}
+p{font-size:16px;line-height:1.75;color:rgba(233,233,237,.72);margin:0 0 20px}
+ul,ol{margin:0 0 24px;padding-left:22px}
+li{font-size:16px;line-height:1.7;color:rgba(233,233,237,.72);margin-bottom:10px}
+li::marker{color:#9184d9}
+strong{color:#e9e9ed;font-weight:600}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#1a1c2b;border:1px solid rgba(233,233,237,.12);border-radius:4px;padding:1px 6px;color:#d2cefd}
+.decision-list{margin:0 0 24px;padding:0;list-style:none}
+.decision-list li{display:flex;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px solid rgba(233,233,237,.08)}
+.decision-list li:last-child{border-bottom:none}
+.decision-list .arrow{color:#9184d9;flex:none}
+.callout{margin:40px 0;padding:24px 28px;border-radius:10px;background:#1a1c2b;border:1px solid rgba(233,233,237,.1)}
+.callout p{margin:0;color:rgba(233,233,237,.8)}
+.warning{margin:20px 0 24px;padding:16px 20px;border-radius:8px;background:rgba(233,150,80,.08);border:1px solid rgba(233,150,80,.28)}
+.warning p{margin:0;color:rgba(233,233,237,.82);font-size:15px}
+.cta{margin-top:56px;padding:32px;border-radius:10px;background:linear-gradient(180deg,#1a1c2b,#161826);border:1px solid rgba(233,233,237,.08);text-align:center}
+.cta p{margin:0 0 18px;color:rgba(233,233,237,.7)}
+.cta a{display:inline-flex;font-size:14px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:11.2px 22.4px;text-decoration:none}
+.cta a:hover{background:rgba(145,132,217,.14)}
+footer{padding:32px 44px;border-top:1px solid rgba(233,233,237,.08);text-align:center;font-size:12px;color:rgba(233,233,237,.4)}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/blog/index.html">&larr; Blogs</a>
+  <a class="brand" href="/index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">AI &amp; SEO Search</div>
+  <h1>Shopify Robots.txt: What It Actually Controls (and What It Doesn't)</h1>
+  <div class="meta">Joyal Johnson &middot; Aug 6, 2026</div>
+
+  <p class="lede">Robots.txt is one of those files that gets more credit, and more blame, than it deserves. Merchants either ignore it completely or go in and start blocking things they shouldn't, usually because they read somewhere that "blocking pages helps SEO" without understanding what the file actually does.</p>
+
+  <p>Here's the short version: robots.txt tells crawlers where they're allowed to go. It doesn't remove anything from Google's index, it doesn't guarantee bots will listen, and used wrong, it can quietly strip pages out of search results that you actually wanted ranking.</p>
+
+  <p>Let me walk through what it does, what Shopify gives you out of the box, and where I'd actually recommend touching it.</p>
+
+  <h2>What robots.txt is actually for</h2>
+  <p>Your robots.txt file gives crawlers, Googlebot, Bingbot, and anything else that respects the standard, instructions on which parts of your site to crawl and which to leave alone.</p>
+  <p>The part people miss: it's a request, not a lock. Crawlers that follow the rules will follow it. Bots that don't care about the rules will ignore it entirely. And disallowing a URL in robots.txt doesn't remove it from the index, it just stops crawling. If Google already knows about that URL through a link somewhere, it can still show up in search results, just with no description, because Google was never allowed in to read it.</p>
+  <p>Where it earns its keep:</p>
+  <ul>
+    <li>Keeping crawl budget off pages that have zero SEO value</li>
+    <li>Steering crawlers toward the pages that actually matter</li>
+    <li>Keeping system and account pages out of the crawl queue (though noindex tags are the better tool for actually keeping something out of results)</li>
+  </ul>
+
+  <h2>What Shopify blocks by default</h2>
+  <p>Shopify ships every store with a robots.txt file already configured, and it's genuinely decent out of the box. It blocks:</p>
+  <ul>
+    <li><code>/admin</code>, your store's back end</li>
+    <li><code>/cart</code>, no SEO value, ever</li>
+    <li><code>/orders</code> and <code>/account</code>, customer-specific pages</li>
+    <li><code>/checkouts</code>, the checkout flow</li>
+    <li>A handful of internal and system paths</li>
+    <li><code>/collections/*+*</code>, filtered collection URLs with multiple parameters stacked</li>
+    <li><code>/blogs/*/tagged/*</code>, blog tag archive pages</li>
+    <li><code>/*/collections/*</code>, nested collection paths</li>
+  </ul>
+  <p>It also points crawlers at your sitemap automatically. For the overwhelming majority of stores, this default setup is fine as-is. It keeps the junk out and leaves products, collections, blog posts, and static pages open to be crawled and indexed.</p>
+
+  <h2>When it's actually worth customizing</h2>
+  <p>The defaults cover most stores, but a few situations genuinely call for changes:</p>
+
+  <p><strong>You've got pages you don't want crawled.</strong> A staging collection, an old campaign landing page, anything that shouldn't be showing up in search.</p>
+  <p><strong>Sort and filter parameters are creating duplicate content.</strong> URLs like <code>?sort_by=best-selling</code> technically create a new URL for content that already exists elsewhere. Some stores choose to block these outright.</p>
+  <p><strong>Vendor archive pages are indexing.</strong> Shopify auto-generates <code>/collections/vendors/[vendor-name]</code> pages. If you're not using these intentionally, they're often worth blocking.</p>
+  <p><strong>You want tag pages crawlable.</strong> If you've built genuinely useful tag pages, real content hubs, not just a list of links, the default block is working against you.</p>
+  <p><strong>You're running more than one sitemap.</strong> Custom sections sometimes need their own sitemap referenced.</p>
+
+  <h2>How to actually edit it</h2>
+  <p>Shopify has let stores customize robots.txt since 2021, through a template file called <code>robots.txt.liquid</code>.</p>
+  <p>To find or create it: go to Online Store, then Themes, then Edit Code (it's under the three-dot menu or Actions button depending on your theme editor version). Look in the Templates folder for <code>robots.txt.liquid</code>. If it's not there, you create it as a new template.</p>
+  <p>The file needs to start with Shopify's default rules, pulled in through Liquid's header tag for robots.txt, and then your custom <code>Disallow</code> or <code>Allow</code> lines go underneath that.</p>
+  <div class="warning">
+    <p><strong>One rule that matters more than any other here:</strong> don't delete the defaults. They're protecting real system pages from being crawled. You're adding to the file, not replacing it.</p>
+  </div>
+
+  <h2>Customizations I'd actually make</h2>
+  <p><strong>Blocking one specific page.</strong> Add a <code>Disallow</code> line for that exact path. Simple.</p>
+  <p><strong>Blocking filtered collection URLs.</strong> <code>/collections/shoes?filter.v.size=10</code> and every variation of it can spiral into a duplicate content mess fast. Block the parameter patterns causing the damage.</p>
+  <p><strong>Blocking your internal search results.</strong> <code>/search?q=keyword</code> generates thin, near-duplicate pages with no reason to be indexed. Block the path.</p>
+  <p><strong>Adding a sitemap reference.</strong> If an app or custom build created a second sitemap, point crawlers to it here.</p>
+
+  <h2>What not to touch</h2>
+  <p>This is where merchants do real damage. A few things that should stay untouched no matter what:</p>
+
+  <p><strong>CSS and JavaScript.</strong> Google renders your pages to understand them. Block the files that make rendering work, and you're actively hurting how your pages get evaluated. Shopify leaves these open by default, leave them that way.</p>
+  <p><strong>Product images.</strong> Image search sends real traffic. Blocking your CDN or image paths takes that off the table entirely.</p>
+  <p><strong>Collection pages.</strong> These are category-level assets that rank for broad, high-volume terms. Blocking them is giving away search real estate for no reason.</p>
+  <p><strong>Every parameter URL, indiscriminately.</strong> Not all parameters cause duplicate content. Variant selectors, for instance, usually resolve to a proper canonical URL Google handles correctly on its own. Block the parameters actually causing problems, not all of them by default.</p>
+  <p><strong>Using robots.txt to deindex a page.</strong> If a page needs to come out of the index, that's a noindex tag or a sitemap removal, not a robots.txt block. Block it in robots.txt and Google can't even see the noindex tag, so you end up with a page that stays indexed with no content behind it. That's the worst possible outcome.</p>
+
+  <h2>Does crawl budget actually matter here?</h2>
+  <p>Crawl budget is simply how many pages Googlebot is willing to crawl on your site in a given stretch of time. For most Shopify stores, anything under roughly 10,000 pages, this isn't something to lose sleep over. Google crawls small and mid-sized stores thoroughly regardless of what robots.txt says.</p>
+  <p>It starts to matter once you're dealing with:</p>
+  <ul>
+    <li>Very large catalogs (50,000+ product pages)</li>
+    <li>Massive filtered URL combinations</li>
+    <li>Parameter-driven URLs that create near-infinite crawl paths</li>
+  </ul>
+  <p>At that scale, robots.txt becomes a real lever: pointing crawl budget at products and collections, and away from filtered views, tag archives, and search result pages that add nothing.</p>
+
+  <h2>Checking your work after you make changes</h2>
+  <p>Once you've edited robots.txt, verify it actually did what you intended:</p>
+  <p><strong>Google Search Console.</strong> Crawl Stats (under Settings) shows how Googlebot is actually crawling your site. The URL Inspection tool lets you test individual URLs against your current robots.txt rules.</p>
+  <p><strong>Third-party robots.txt testers.</strong> Search Console's built-in tester has been deprecated, but plenty of standalone tools do the same job, testing specific URLs against your rules.</p>
+  <p><strong>A full site crawl.</strong> Run your store through Screaming Frog or Sitebulb. Both respect robots.txt by default, so anything they can't reach is a page Googlebot can't reach either. It's a fast way to catch accidental blocks.</p>
+
+  <h2>Meta robots tags: the more precise tool</h2>
+  <p>For controlling individual pages, meta robots tags do a more surgical job than robots.txt.</p>
+  <p><code>noindex, follow</code>, keeps the page itself out of the index but still passes value through its links. Good for thin pages that link to more important ones.</p>
+  <p><code>noindex, nofollow</code>, keeps the page out and stops link equity from flowing through it. Reserve this for pages that are genuinely internal.</p>
+  <p>On Shopify, you can apply these through your theme code with conditional Liquid logic, through an SEO app, or via custom metafields if your theme supports them.</p>
+  <p>The decision tree is pretty simple:</p>
+  <ul class="decision-list">
+    <li><span class="arrow">&rarr;</span> One page needs to come out of the index: meta robots <code>noindex</code></li>
+    <li><span class="arrow">&rarr;</span> An entire URL pattern needs to stay uncrawled: robots.txt <code>disallow</code></li>
+    <li><span class="arrow">&rarr;</span> A page shouldn't be indexed but its links should still get followed: <code>noindex, follow</code> (robots.txt would block the links too, which isn't what you want)</li>
+  </ul>
+
+  <h2>A few other Shopify SEO quirks worth knowing</h2>
+  <p><strong>Duplicate product paths.</strong> Every product lives at both <code>/products/item</code> and <code>/collections/category/products/item</code>. Shopify handles this correctly with a canonical tag pointing back to the <code>/products/</code> version, leave it alone. Trying to block the collection-path version in robots.txt just interferes with a system that's already working.</p>
+  <p><strong>Pagination.</strong> Paginated collection pages (<code>?page=2</code>, <code>?page=3</code>) come with proper rel=next/prev signals built in, and Google's pagination handling has gotten good enough that these don't need special treatment. Leave them crawlable.</p>
+  <p><strong>Tag pages.</strong> Blocked by default, and for most stores that's correct, they're thin, list-only pages. If you've actually built them into real content hubs with unique value, that's the one case where unblocking them makes sense.</p>
+
+  <h2>Where to start</h2>
+  <p>Open Online Store, then Themes, then Edit Code, and check whether <code>robots.txt.liquid</code> already exists in your templates. If it does, read through what's actually in there. If it doesn't, you're running on Shopify's defaults, which is a perfectly fine place to be for most stores.</p>
+  <p>Then head into Google Search Console and run the URL Inspection tool against five pages that matter: your homepage, a top-selling product, a key collection page, a recent blog post. Confirm each one is crawlable and indexable.</p>
+
+  <div class="callout">
+    <p>If anything comes back blocked that shouldn't be, or indexed that shouldn't be, that's your next fix.</p>
+  </div>
+
+  <div class="cta">
+    <p>Want a technical SEO audit that actually checks what's blocked and what shouldn't be?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="/index.html">joyaljohnson.com</a></footer>
+</body>
+</html>

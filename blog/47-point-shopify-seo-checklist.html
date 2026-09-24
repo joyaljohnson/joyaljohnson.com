@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A 47-Point Shopify SEO Checklist | Joyal Johnson</title>
+<meta name="description" content="Most audited Shopify stores turn up the same 15-20 technical issues, costing them 20-40% of the rankings they should have. Technical foundation first, content second, everything else after.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+<body>
+<header>
+  <a class="back" href="/blog/index.html">&larr; Blogs</a>
+  <a class="brand" href="/index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">AI &amp; SEO Search</div>
+  <h1>A 47-Point Shopify SEO Checklist</h1>
+  <div class="meta">Joyal Johnson &middot; Aug 24, 2026</div>
+
+  <p class="lede">A large majority of Shopify stores that get properly audited turn up the same 15&ndash;20 technical issues, usually costing them 20&ndash;40% of the rankings they should otherwise have. Great blog content doesn't matter much if the site architecture is broken and page speed is terrible, so this checklist runs technical foundation first, content second, and everything else after that.</p>
+
+  <h2>Phase 1: Technical foundation (items 1&ndash;15)</h2>
+  <p>These are the items that undermine everything else if they're broken. Fix these before anything else.</p>
+
+  <h3>Crawling and indexing</h3>
+  <ol>
+    <li>Check robots.txt for blocking errors. Visit <code>yourstore.com/robots.txt</code> and actually read it. Shopify's default is mostly fine, but an edited version can accidentally block an entire directory like <code>/collections/</code>, an instant traffic killer.</li>
+    <li>Submit the XML sitemap to Google Search Console. It lives at <code>yourstore.com/sitemap.xml</code>. If the site isn't verified in Search Console with the sitemap submitted, that's five minutes that matters more than almost anything else on this list.</li>
+    <li>Check for noindex tags on important pages. Search the theme code for <code>noindex</code>. Shopify doesn't add these by default, but apps and past developers sometimes do, an entire catalog set to noindex because a staging app was never removed is a real, recurring failure mode.</li>
+    <li>Review canonical tags. Every page should have a self-referencing canonical tag. Products appearing in multiple collections can create canonical confusion, confirm product pages canonicalize to <code>/products/product-name</code>, not to a collection-nested variant of the URL.</li>
+    <li>Fix duplicate content from URL variants. Shopify can generate multiple URLs for the same product through collection paths, make sure every variant points back to the canonical product URL.</li>
+  </ol>
+
+  <h3>Site speed</h3>
+  <ol start="6">
+    <li>Run PageSpeed Insights on five key pages. Homepage, a collection page, a product page, a blog post, and the cart page. Document the scores; anything under 60 on mobile needs immediate attention.</li>
+    <li>Audit installed apps for speed impact. This is usually the biggest speed killer on Shopify, every app adds JavaScript. It's common to find fifteen or twenty apps installed with several no longer even in use. Remove what isn't needed. The worst offenders tend to be live chat widgets, review apps loading on every page, loyalty popups, social-proof notification widgets, and countdown timers.</li>
+    <li>Optimize images. Anything over 200KB per product image is too big. Resize before uploading, 1200px wide is plenty for most product images.</li>
+    <li>Minimize render-blocking resources. Check how many CSS and JS files load before the page renders. Defer non-critical JavaScript and inline critical CSS where the theme allows it.</li>
+    <li>Check the Largest Contentful Paint element on each page type. Usually the main product image on product pages, the first product card image on collection pages. Preload these to bring LCP under two seconds.</li>
+  </ol>
+
+  <h3>Mobile experience</h3>
+  <ol start="11">
+    <li>Test mobile usability in Search Console and fix everything it flags, over 70% of eCommerce traffic is mobile now, so a broken mobile experience is a broken SEO strategy.</li>
+    <li>Check tap targets. Buttons and links need to be at least 48&times;48 pixels on mobile. Filter buttons on collection pages are the most common failure point.</li>
+    <li>Verify viewport configuration is set correctly in the theme, almost always fine by default, but custom themes occasionally miss it.</li>
+  </ol>
+
+  <h3>SSL and security</h3>
+  <ol start="14">
+    <li>Confirm HTTPS everywhere, and check for mixed-content warnings, usually caused by images or scripts loaded over HTTP from an external source.</li>
+    <li>Verify HSTS headers, especially on a custom domain with specific DNS configuration.</li>
+  </ol>
+
+  <h2>Phase 2: On-page optimization (items 16&ndash;30)</h2>
+  <p>Starting here without fixing Phase 1 first is like painting a house on a cracked foundation.</p>
+
+  <h3>Title tags and meta descriptions</h3>
+  <ol start="16">
+    <li>Audit every page title for uniqueness, export titles with a crawler like Screaming Frog and look for duplicates.</li>
+    <li>Use a consistent title format: Primary Keyword &ndash; Secondary Keyword | Brand Name, kept under 60 characters (the brand name gets cut off first on mobile, which is fine).</li>
+    <li>Write unique meta descriptions for the top 50 pages by traffic or revenue, manual work, but worth it.</li>
+    <li>Check for missing meta descriptions anywhere else, and use at minimum a template: "Shop [Product Category] at [Brand]. [Benefit]. Free shipping on orders over $[amount]."</li>
+  </ol>
+
+  <h3>Heading structure</h3>
+  <ol start="20">
+    <li>Verify exactly one H1 per page, the product name on product pages, the collection name on collection pages, the post title on blog posts.</li>
+    <li>Check heading hierarchy, H1 to H2 to H3, no skipped levels.</li>
+    <li>Include keywords naturally in H2 subheadings, never stuffed.</li>
+  </ol>
+
+  <h3>Product pages</h3>
+  <ol start="23">
+    <li>Write unique product descriptions of at least 150 words. Manufacturer copy that appears on fifty other stores gives Google no reason to rank the page.</li>
+    <li>Add product schema markup, review schema, offer schema, and brand schema beyond whatever the theme includes by default.</li>
+    <li>Optimize product image alt text with real descriptions that include the product name.</li>
+    <li>Add FAQ sections to top product pages, pulled from real customer questions and marked up with FAQ schema, this alone tends to drive a real lift in organic impressions per product page.</li>
+    <li>Implement breadcrumb navigation with breadcrumb schema.</li>
+  </ol>
+
+  <h3>Collection pages</h3>
+  <ol start="28">
+    <li>Add collection descriptions of at least 200 words, with a 300&ndash;500 word section below the grid where it makes sense.</li>
+    <li>Keep collection URLs short and keyword-rich, <code>/collections/womens-running-shoes</code>, not a long string of modifiers.</li>
+    <li>Set proper pagination with correct <code>rel=next</code>/<code>rel=prev</code> handling (or the modern equivalent), and unique titles on each paginated page.</li>
+  </ol>
+
+  <h2>Phase 3: Content and structure (items 31&ndash;40)</h2>
+
+  <h3>Blog setup</h3>
+  <ol start="31">
+    <li>Create a real content hub, not just a plain chronological blog list, categories and featured posts help both users and crawlers.</li>
+    <li>Keep blog post URLs short and keyword-rich, with dates removed so content doesn't look outdated.</li>
+    <li>Add visible author information and author schema to every post, Google's quality signals reward named, credentialed authors.</li>
+    <li>Show related posts at the bottom of every post to increase pages per session and strengthen internal linking.</li>
+  </ol>
+
+  <h3>Internal linking</h3>
+  <ol start="35">
+    <li>Link the top five to eight collection pages from main navigation, these are the most commercially important pages, so give them the strongest internal signals.</li>
+    <li>Cross-link related collections at the bottom of each collection page.</li>
+    <li>Link every blog post to at least one product page and one collection page, most eCommerce blogs generate traffic but never point it toward revenue.</li>
+    <li>Build a keyword-to-URL map, one spreadsheet column for target keywords, one for the URL that should rank for each, to prevent keyword cannibalization and guide internal linking.</li>
+  </ol>
+
+  <h3>Structured data</h3>
+  <ol start="39">
+    <li>Add Organization schema to the homepage with brand name, logo, social profiles, and contact info.</li>
+    <li>Add LocalBusiness schema if there's a physical location, with address, hours, and phone number.</li>
+  </ol>
+
+  <h2>Phase 4: Off-page and monitoring (items 41&ndash;47)</h2>
+  <ol start="41">
+    <li>Claim and optimize a Google Business Profile, even for an online-only brand, it still helps establish trust signals.</li>
+    <li>Set up a weekly Search Console review, indexing issues, coverage errors, Core Web Vitals, and search performance trends, on a recurring calendar slot.</li>
+    <li>Monitor the Manual Actions section monthly, if Google penalizes a site, you want to know immediately, not six months later once traffic has already tanked.</li>
+    <li>Track crawl stats, a sudden drop in crawl frequency usually points to a robots.txt change, a server speed issue, or a flood of error pages.</li>
+    <li>Set up GA4 with proper eCommerce tracking, purchase events, add-to-cart events, and product view events all firing correctly.</li>
+    <li>Create an organic-traffic-only segment in GA4 and track its revenue, conversion rate, and AOV separately from paid and direct.</li>
+    <li>Set up automated alerts for traffic drops over 20% week-over-week, sudden 404 spikes, and conversion rate drops over 15%.</li>
+  </ol>
+
+  <h2>How this typically breaks down</h2>
+  <p>Run through all 47 items on a store and the issues usually sort into a handful of critical problems actively hurting rankings, often technical, like broken canonicals, speed problems, or indexing blocks, ten to fifteen high-priority optimizations that drive quick wins (title tags, collection content, schema), and another ten to fifteen medium-priority items for ongoing work (blog content, internal linking, monitoring setup). Most stores see ranking improvement within 45&ndash;60 days of fixing the critical and high-priority items, with revenue impact following in month three or four as higher rankings turn into traffic and traffic turns into orders.</p>
+
+  <div class="callout">
+    <p>Print the list, run through it this week, and fix what's broken in priority order.</p>
+  </div>
+
+  <div class="cta">
+    <p>Want this checklist run against your store, item by item?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="/index.html">joyaljohnson.com</a></footer>
+</body>
+</html>
