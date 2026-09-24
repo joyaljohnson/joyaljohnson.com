@@ -5,12 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joyal Johnson | AI-Assisted Digital Presence, Guides & hashp.co</title>
 <meta name="description" content="I build low-cost digital presence for small businesses, non-profits and individuals with AI, and sell the method as short guides. Studio work at hashp.co.">
+<script>(function(){try{var t=localStorage.getItem('jj-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');var f=localStorage.getItem('jj-font-scale');if(f)document.documentElement.style.zoom=(parseInt(f,10)/100)}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0e0f16;font-family:Inter,system-ui,sans-serif}
-a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
+:root{
+--bg:#0e0f16;--panel:#161826;--panel-rgb:22,24,38;--card:#232532;--card-border:#3f424d;--card-border-hover:#5d5294;--grad-top:#1a1c2b;
+--text:#e9e9ed;--text-rgb:233,233,237;
+--accent:#9184d9;--accent-rgb:145,132,217;--accent-hover:#b5abfc;--accent-soft:#d2cefd;
+color-scheme:dark;
+}
+:root[data-theme="light"]{
+--bg:#f6f5fb;--panel:#ffffff;--panel-rgb:255,255,255;--card:#f1eff8;--card-border:#ddd7ec;--card-border-hover:#b3a5e8;--grad-top:#efecf9;
+--text:#1b1a22;--text-rgb:27,26,34;
+--accent:#6d5cc4;--accent-rgb:109,92,196;--accent-hover:#54459e;--accent-soft:#54459e;
+color-scheme:light;
+}
+body{margin:0;background:var(--bg);font-family:Inter,system-ui,sans-serif;transition:background-color .2s ease}
+a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover)}
+.a11y-btn{display:inline-flex;align-items:center;justify-content:center;font-family:inherit;cursor:pointer;background:transparent;color:rgba(var(--text-rgb),.7);border:1px solid rgba(var(--text-rgb),.18);border-radius:6px}
+.a11y-btn:hover{color:var(--text);border-color:rgba(var(--text-rgb),.4)}
+.fs-group{display:flex;align-items:center;gap:2px;border:1px solid rgba(var(--text-rgb),.18);border-radius:6px;padding:2px}
+.fs-group button{border:none;border-radius:4px}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -23,7 +40,7 @@ a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
 /* The design canvas exported this at a fixed 1280px reference width for
    side-by-side review. Make it fluid so it actually works as a real,
    responsive site. */
-[style*="width:1280px;background:#161826"]{ width:100% !important; max-width:1280px; margin:0 auto; }
+[style*="width:1280px;background:var(--panel)"]{ width:100% !important; max-width:1280px; margin:0 auto; }
 
 .work-thumb img{transition:transform .3s ease}
 .work-row:hover .work-thumb img{transform:scale(1.05)}
@@ -51,7 +68,7 @@ a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
   [style*="align-items:center;gap:22.4px;font-size:13.5px"]{
     flex-wrap:wrap; row-gap:8px; justify-content:flex-start !important;
   }
-  [style*="padding:56px 44px;border-top:1px solid rgba(233,233,237,.08);display:flex;justify-content:space-between;align-items:flex-end"]{
+  [style*="padding:56px 44px;border-top:1px solid rgba(var(--text-rgb),.08);display:flex;justify-content:space-between;align-items:flex-end"]{
     flex-direction:column; align-items:flex-start !important; gap:20px;
   }
 }
@@ -59,139 +76,145 @@ a{color:#9184d9;text-underline-offset:3px}a:hover{color:#b5abfc}
 </head>
 <body>
 <div class="wrap">
-<div class="dv-card" style="width:1280px;background:#161826;color:#e9e9ed">
-<div style="position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(22,24,38,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(233,233,237,.08)">
+<div class="dv-card" style="width:1280px;background:var(--panel);color:var(--text)">
+<div style="position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(var(--panel-rgb),.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(var(--text-rgb),.08)">
 <div style="display:flex;align-items:baseline;gap:10px"><span style="font-weight:500;font-size:15px;letter-spacing:-.01em">Joyal Johnson</span></div>
-<div style="display:flex;align-items:center;gap:22.4px;font-size:13.5px;color:rgba(233,233,237,.7)">
-<a href="#work" style="color:inherit;text-decoration:none" style-hover="color:#e9e9ed">Work</a>
-<a href="#guides" style="color:inherit;text-decoration:none" style-hover="color:#e9e9ed">Guides</a>
-<a href="#notes" style="color:inherit;text-decoration:none" style-hover="color:#e9e9ed">Blogs</a>
-<a href="/cv.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:#e9e9ed">CV</a>
-<a href="https://hashp.co" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:#e9e9ed">hashp.co ↗</a>
-<a href="#guides" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:5.6px 11.2px;text-decoration:none" style-hover="background:rgba(145,132,217,.12)">Browse guides</a>
+<div style="display:flex;align-items:center;gap:22.4px;font-size:13.5px;color:rgba(var(--text-rgb),.7)">
+<a href="#work" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">Work</a>
+<a href="#guides" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">Guides</a>
+<a href="#notes" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">Blogs</a>
+<a href="/cv.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">CV</a>
+<a href="https://hashp.co" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">hashp.co ↗</a>
+<div class="fs-group" role="group" aria-label="Text size">
+<button type="button" class="a11y-btn" data-fs="down" title="Decrease text size" aria-label="Decrease text size" style="width:26px;height:26px;font-size:11px">A−</button>
+<button type="button" class="a11y-btn" data-fs="reset" title="Reset text size" aria-label="Reset text size" style="width:26px;height:26px;font-size:12px">A</button>
+<button type="button" class="a11y-btn" data-fs="up" title="Increase text size" aria-label="Increase text size" style="width:26px;height:26px;font-size:15px">A+</button>
+</div>
+<button type="button" id="theme-toggle" class="a11y-btn" title="Toggle dark / light mode" aria-label="Toggle dark or light mode" aria-pressed="false" style="width:30px;height:30px;font-size:14px">◐</button>
+<a href="#guides" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:5.6px 11.2px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.12)">Browse guides</a>
 </div>
 </div>
-<div data-spot="" style="position:relative;overflow:hidden;padding:100px 44px 56px;background:radial-gradient(620px 420px at var(--mx,26%) var(--my,20%),rgba(145,132,217,.16),transparent 70%)">
+<div data-spot="" style="position:relative;overflow:hidden;padding:100px 44px 56px;background:radial-gradient(620px 420px at var(--mx,26%) var(--my,20%),rgba(var(--accent-rgb),.16),transparent 70%)">
 <div style="max-width:1150px;margin:0 auto;text-align:center">
-<div style="display:flex;align-items:center;justify-content:center;margin-bottom:22.4px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d2cefd">One person · AI-assisted · low cost</span></div>
-<h1 style="margin:0 auto;font-size:clamp(2rem, -0.26rem + 4.73vw, 3.4rem);line-height:1.22;letter-spacing:-.02em;font-weight:500">The era of masters is over.<br><span style="color:rgba(233,233,237,.45)">Exposure, practice and skill, with AI, <br>rules what comes next.</span></h1>
-<p style="margin:28px auto 0;max-width:560px;font-size:16.5px;line-height:1.6;color:rgba(233,233,237,.62)">I build digital presence for small businesses, non-profits and individuals, and I package what I know into short, cheap guides so you can do it yourself.</p>
+<div style="display:flex;align-items:center;justify-content:center;margin-bottom:22.4px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft)">One person · AI-assisted · low cost</span></div>
+<h1 style="margin:0 auto;font-size:clamp(2rem, -0.26rem + 4.73vw, 3.4rem);line-height:1.22;letter-spacing:-.02em;font-weight:500">The era of masters is over.<br><span style="color:rgba(var(--text-rgb),.45)">Exposure, practice and skill, with AI, <br>rules what comes next.</span></h1>
+<p style="margin:28px auto 0;max-width:560px;font-size:16.5px;line-height:1.6;color:rgba(var(--text-rgb),.62)">I build digital presence for small businesses, non-profits and individuals, and I package what I know into short, cheap guides so you can do it yourself.</p>
 <div style="display:flex;justify-content:center;gap:11.2px;margin-top:33.6px">
-<a href="#guides" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(145,132,217,.14)">Browse the guides →</a>
-<a href="https://hashp.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(233,233,237,.8);border:1px solid rgba(233,233,237,.18);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="border-color:rgba(233,233,237,.4)">Work with me at hashp.co</a>
+<a href="#guides" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.14)">Browse the guides →</a>
+<a href="https://hashp.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(var(--text-rgb),.8);border:1px solid rgba(var(--text-rgb),.18);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="border-color:rgba(var(--text-rgb),.4)">Work with me at hashp.co</a>
 </div>
 </div>
-<div style="margin-top:56px;overflow:hidden;border-top:1px solid rgba(233,233,237,.08);border-bottom:1px solid rgba(233,233,237,.08);padding:14px 0;mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)">
-<div class="mq" style="gap:44px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(233,233,237,.35)">
-<span>Exposure</span><span style="color:#9184d9">✦</span><span>Practice</span><span style="color:#9184d9">✦</span><span>Skill</span><span style="color:#9184d9">✦</span><span>AI as leverage</span><span style="color:#9184d9">✦</span><span>Low cost</span><span style="color:#9184d9">✦</span><span>Ship it this week</span><span style="color:#9184d9">✦</span>
-<span>Exposure</span><span style="color:#9184d9">✦</span><span>Practice</span><span style="color:#9184d9">✦</span><span>Skill</span><span style="color:#9184d9">✦</span><span>AI as leverage</span><span style="color:#9184d9">✦</span><span>Low cost</span><span style="color:#9184d9">✦</span><span>Ship it this week</span><span style="color:#9184d9">✦</span>
+<div style="margin-top:56px;overflow:hidden;border-top:1px solid rgba(var(--text-rgb),.08);border-bottom:1px solid rgba(var(--text-rgb),.08);padding:14px 0;mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)">
+<div class="mq" style="gap:44px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--text-rgb),.35)">
+<span>Exposure</span><span style="color:var(--accent)">✦</span><span>Practice</span><span style="color:var(--accent)">✦</span><span>Skill</span><span style="color:var(--accent)">✦</span><span>AI as leverage</span><span style="color:var(--accent)">✦</span><span>Low cost</span><span style="color:var(--accent)">✦</span><span>Ship it this week</span><span style="color:var(--accent)">✦</span>
+<span>Exposure</span><span style="color:var(--accent)">✦</span><span>Practice</span><span style="color:var(--accent)">✦</span><span>Skill</span><span style="color:var(--accent)">✦</span><span>AI as leverage</span><span style="color:var(--accent)">✦</span><span>Low cost</span><span style="color:var(--accent)">✦</span><span>Ship it this week</span><span style="color:var(--accent)">✦</span>
 </div>
 </div>
 </div>
-<div class="rv" style="display:grid;grid-template-columns:1fr 1.35fr;gap:56px;padding:72px 44px;border-top:1px solid rgba(233,233,237,.06)">
+<div class="rv" style="display:grid;grid-template-columns:1fr 1.35fr;gap:56px;padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
 <div>
-<h6 style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(233,233,237,.4)">About</h6>
-<div style="aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:#232532"><img src="/assets/images/joyal-johnson.png" alt="Joyal Johnson" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<h6 style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4)">About</h6>
+<div style="aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--card)"><img src="/assets/images/joyal-johnson.png" alt="Joyal Johnson" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 </div>
 <div style="padding-top:33.6px">
 <p style="margin:0 0 16.8px;font-size:23px;line-height:1.45;font-weight:400;letter-spacing:-.015em;max-width:620px">I work alone. That is the point: no agency layers, no retainers you cannot read, no six-week discovery phase before anything exists.</p>
-<p style="margin:0 0 11.2px;font-size:15px;line-height:1.65;color:rgba(233,233,237,.6);max-width:560px">Everything I ship is made with AI in the loop: research, copy drafts, layout, code. That is what keeps the price low and the turnaround short. What I bring is judgement about what to keep.</p>
-<p style="margin:0;font-size:15px;line-height:1.65;color:rgba(233,233,237,.6);max-width:560px">If you would rather learn it than buy it, the guides are the same process written down.</p>
-<div style="display:flex;gap:44px;margin-top:33.6px;padding-top:22.4px;border-top:1px solid rgba(233,233,237,.08)">
-<div><div style="font-size:26px;font-weight:500;letter-spacing:-.02em">1</div><div style="font-size:12px;color:rgba(233,233,237,.45)">person behind it all</div></div>
-<div><div style="font-size:26px;font-weight:500;letter-spacing:-.02em">2 wks</div><div style="font-size:12px;color:rgba(233,233,237,.45)">typical site turnaround</div></div>
-<div><div style="font-size:26px;font-weight:500;letter-spacing:-.02em">AI</div><div style="font-size:12px;color:rgba(233,233,237,.45)">in every step</div></div>
+<p style="margin:0 0 11.2px;font-size:15px;line-height:1.65;color:rgba(var(--text-rgb),.6);max-width:560px">Everything I ship is made with AI in the loop: research, copy drafts, layout, code. That is what keeps the price low and the turnaround short. What I bring is judgement about what to keep.</p>
+<p style="margin:0;font-size:15px;line-height:1.65;color:rgba(var(--text-rgb),.6);max-width:560px">If you would rather learn it than buy it, the guides are the same process written down.</p>
+<div style="display:flex;gap:44px;margin-top:33.6px;padding-top:22.4px;border-top:1px solid rgba(var(--text-rgb),.08)">
+<div><div style="font-size:26px;font-weight:500;letter-spacing:-.02em">1</div><div style="font-size:12px;color:rgba(var(--text-rgb),.45)">person behind it all</div></div>
+<div><div style="font-size:26px;font-weight:500;letter-spacing:-.02em">2 wks</div><div style="font-size:12px;color:rgba(var(--text-rgb),.45)">typical site turnaround</div></div>
+<div><div style="font-size:26px;font-weight:500;letter-spacing:-.02em">AI</div><div style="font-size:12px;color:rgba(var(--text-rgb),.45)">in every step</div></div>
 </div>
 </div>
 </div>
-<div class="rv" style="padding:72px 44px;border-top:1px solid rgba(233,233,237,.06)">
+<div class="rv" style="padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
 <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:33.6px">
-<div><h6 id="guides" style="margin:0 0 11.2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(233,233,237,.4);scroll-margin-top:88px">Guides &amp; micro courses</h6><h2 style="margin:0;font-size:38px;letter-spacing:-.025em;font-weight:500">Learn the method for the price of lunch</h2></div>
-<a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;color:#d2cefd;text-decoration:none">All products ↗</a>
+<div><h6 id="guides" style="margin:0 0 11.2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4);scroll-margin-top:88px">Guides &amp; micro courses</h6><h2 style="margin:0;font-size:38px;letter-spacing:-.025em;font-weight:500">Learn the method for the price of lunch</h2></div>
+<a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;color:var(--accent-soft);text-decoration:none">All products ↗</a>
 </div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22.4px">
-<div style="padding:22.4px;border-radius:8px;background:#232532;box-shadow:0 0 0 1px #3f424d;display:flex;flex-direction:column;gap:11.2px" style-hover="box-shadow:0 0 0 1px #5d5294">
-<span style="align-self:flex-start;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#d2cefd;border:1px solid rgba(145,132,217,.4);border-radius:4px;padding:2.8px 5.6px">Guide · PDF</span>
+<div style="padding:22.4px;border-radius:8px;background:var(--card);box-shadow:0 0 0 1px var(--card-border);display:flex;flex-direction:column;gap:11.2px" style-hover="box-shadow:0 0 0 1px var(--card-border-hover)">
+<span style="align-self:flex-start;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft);border:1px solid rgba(var(--accent-rgb),.4);border-radius:4px;padding:2.8px 5.6px">Guide · PDF</span>
 <div style="font-size:20px;font-weight:500;letter-spacing:-.02em;line-height:1.2">The AI Presence Starter</div>
-<p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(233,233,237,.6);flex:1">Name, page, profiles, proof. The exact sequence I use to get a business visible online in a weekend.</p>
-<div style="display:flex;justify-content:flex-end;margin-top:5.6px"><a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:5.6px 14px;text-decoration:none" style-hover="background:rgba(145,132,217,.12)">Buy</a></div>
+<p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(var(--text-rgb),.6);flex:1">Name, page, profiles, proof. The exact sequence I use to get a business visible online in a weekend.</p>
+<div style="display:flex;justify-content:flex-end;margin-top:5.6px"><a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:5.6px 14px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.12)">Buy</a></div>
 </div>
-<div style="padding:22.4px;border-radius:8px;background:#232532;box-shadow:0 0 0 1px #5d5294;display:flex;flex-direction:column;gap:11.2px;position:relative">
-<span style="position:absolute;top:-9px;left:22.4px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:#9184d9;color:#161826;border-radius:4px;padding:2.8px 6px">Most bought</span>
-<span style="align-self:flex-start;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#d2cefd;border:1px solid rgba(145,132,217,.4);border-radius:4px;padding:2.8px 5.6px">Micro course · 6 lessons</span>
+<div style="padding:22.4px;border-radius:8px;background:var(--card);box-shadow:0 0 0 1px var(--card-border-hover);display:flex;flex-direction:column;gap:11.2px;position:relative">
+<span style="position:absolute;top:-9px;left:22.4px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--panel);border-radius:4px;padding:2.8px 6px">Most bought</span>
+<span style="align-self:flex-start;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft);border:1px solid rgba(var(--accent-rgb),.4);border-radius:4px;padding:2.8px 5.6px">Micro course · 6 lessons</span>
 <div style="font-size:20px;font-weight:500;letter-spacing:-.02em;line-height:1.2">Website in a Weekend</div>
-<p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(233,233,237,.6);flex:1">Build and publish a real site with AI doing the heavy lifting. Video, prompts and the templates I use.</p>
-<div style="display:flex;justify-content:flex-end;margin-top:5.6px"><a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:500;color:#161826;background:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:5.6px 14px;text-decoration:none" style-hover="background:#b5abfc">Buy</a></div>
+<p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(var(--text-rgb),.6);flex:1">Build and publish a real site with AI doing the heavy lifting. Video, prompts and the templates I use.</p>
+<div style="display:flex;justify-content:flex-end;margin-top:5.6px"><a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:500;color:var(--panel);background:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:5.6px 14px;text-decoration:none" style-hover="background:var(--accent-hover)">Buy</a></div>
 </div>
-<div style="padding:22.4px;border-radius:8px;background:#232532;box-shadow:0 0 0 1px #3f424d;display:flex;flex-direction:column;gap:11.2px" style-hover="box-shadow:0 0 0 1px #5d5294">
-<span style="align-self:flex-start;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#d2cefd;border:1px solid rgba(145,132,217,.4);border-radius:4px;padding:2.8px 5.6px">Tutorial pack</span>
+<div style="padding:22.4px;border-radius:8px;background:var(--card);box-shadow:0 0 0 1px var(--card-border);display:flex;flex-direction:column;gap:11.2px" style-hover="box-shadow:0 0 0 1px var(--card-border-hover)">
+<span style="align-self:flex-start;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft);border:1px solid rgba(var(--accent-rgb),.4);border-radius:4px;padding:2.8px 5.6px">Tutorial pack</span>
 <div style="font-size:20px;font-weight:500;letter-spacing:-.02em;line-height:1.2">Prompts for Small Business</div>
-<p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(233,233,237,.6);flex:1">40 prompts for copy, offers, emails and social, written for people who are not writers.</p>
-<div style="display:flex;justify-content:flex-end;margin-top:5.6px"><a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:5.6px 14px;text-decoration:none" style-hover="background:rgba(145,132,217,.12)">Buy</a></div>
+<p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(var(--text-rgb),.6);flex:1">40 prompts for copy, offers, emails and social, written for people who are not writers.</p>
+<div style="display:flex;justify-content:flex-end;margin-top:5.6px"><a href="https://hashp.co" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:5.6px 14px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.12)">Buy</a></div>
 </div>
 </div>
 </div>
-<div class="rv" style="padding:72px 44px;background:linear-gradient(180deg,#1a1c2b,#161826);border-top:1px solid rgba(233,233,237,.06)">
+<div class="rv" style="padding:72px 44px;background:linear-gradient(180deg,var(--grad-top),var(--panel));border-top:1px solid rgba(var(--text-rgb),.06)">
 <div style="display:grid;grid-template-columns:1fr 1.35fr;gap:56px">
 <div>
-<h6 style="margin:0 0 11.2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(233,233,237,.4)">Services · hashp.co</h6>
+<h6 style="margin:0 0 11.2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4)">Services · hashp.co</h6>
 <h2 style="margin:0 0 16.8px;font-size:34px;letter-spacing:-.025em;font-weight:500">Rather have it done for you?</h2>
-<p style="margin:0 0 22.4px;font-size:14.5px;line-height:1.65;color:rgba(233,233,237,.6)">hashp.co is my studio. Same method, same AI leverage, done end to end for small businesses, non-profits and individuals.</p>
-<a href="https://hashp.co" target="_blank" rel="noopener" style="display:inline-flex;font-size:14px;font-weight:500;color:#9184d9;border:1px solid #9184d9;border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(145,132,217,.12)">Visit hashp.co ↗</a>
+<p style="margin:0 0 22.4px;font-size:14.5px;line-height:1.65;color:rgba(var(--text-rgb),.6)">hashp.co is my studio. Same method, same AI leverage, done end to end for small businesses, non-profits and individuals.</p>
+<a href="https://hashp.co" target="_blank" rel="noopener" style="display:inline-flex;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.12)">Visit hashp.co ↗</a>
 </div>
 <div style="display:flex;flex-direction:column">
-<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0;border-bottom:1px solid rgba(233,233,237,.08)"><div style="font-size:17px;font-weight:500">Presence starter</div><div style="font-size:13.5px;color:rgba(233,233,237,.55)">One page, profiles, maps listing, basic analytics.</div></div>
-<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0;border-bottom:1px solid rgba(233,233,237,.08)"><div style="font-size:17px;font-weight:500">Full site</div><div style="font-size:13.5px;color:rgba(233,233,237,.55)">Multi-page site, copy, imagery direction, launch.</div></div>
-<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0;border-bottom:1px solid rgba(233,233,237,.08)"><div style="font-size:17px;font-weight:500">Shop setup</div><div style="font-size:13.5px;color:rgba(233,233,237,.55)">Products, payments, shipping, first campaign.</div></div>
-<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0"><div style="font-size:17px;font-weight:500">Non-profit rate</div><div style="font-size:13.5px;color:rgba(233,233,237,.55)">Reduced fee for registered charities and community groups.</div></div>
+<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0;border-bottom:1px solid rgba(var(--text-rgb),.08)"><div style="font-size:17px;font-weight:500">Presence starter</div><div style="font-size:13.5px;color:rgba(var(--text-rgb),.55)">One page, profiles, maps listing, basic analytics.</div></div>
+<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0;border-bottom:1px solid rgba(var(--text-rgb),.08)"><div style="font-size:17px;font-weight:500">Full site</div><div style="font-size:13.5px;color:rgba(var(--text-rgb),.55)">Multi-page site, copy, imagery direction, launch.</div></div>
+<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0;border-bottom:1px solid rgba(var(--text-rgb),.08)"><div style="font-size:17px;font-weight:500">Shop setup</div><div style="font-size:13.5px;color:rgba(var(--text-rgb),.55)">Products, payments, shipping, first campaign.</div></div>
+<div style="display:grid;grid-template-columns:1.4fr 2fr;gap:22.4px;align-items:baseline;padding:22.4px 0"><div style="font-size:17px;font-weight:500">Non-profit rate</div><div style="font-size:13.5px;color:rgba(var(--text-rgb),.55)">Reduced fee for registered charities and community groups.</div></div>
 </div>
 </div>
 </div>
-<div class="rv" style="padding:72px 44px;border-top:1px solid rgba(233,233,237,.06)">
-<div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:33.6px"><h2 id="work" style="margin:0;font-size:38px;letter-spacing:-.025em;font-weight:500;scroll-margin-top:88px">Selected work</h2><span style="font-size:13px;color:rgba(233,233,237,.45)">2024&ndash;2026</span></div>
+<div class="rv" style="padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:33.6px"><h2 id="work" style="margin:0;font-size:38px;letter-spacing:-.025em;font-weight:500;scroll-margin-top:88px">Selected work</h2><span style="font-size:13px;color:rgba(var(--text-rgb),.45)">2024&ndash;2026</span></div>
 <div class="work-list" style="display:flex;flex-direction:column">
-<a href="https://eloraherbalsbylivy.com" target="_blank" rel="noopener" class="work-row" style="display:flex;gap:22.4px;align-items:center;text-decoration:none;color:inherit;padding:22.4px 0;border-bottom:1px solid rgba(233,233,237,.08)">
-<div class="work-thumb" style="flex:none;width:260px;aspect-ratio:16/11;border-radius:8px;overflow:hidden;background:#232532"><img src="/assets/images/eloraherbalsbylivy-screenshot.png" alt="Elora Herbals by Livy, eloraherbalsbylivy.com" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+<a href="https://eloraherbalsbylivy.com" target="_blank" rel="noopener" class="work-row" style="display:flex;gap:22.4px;align-items:center;text-decoration:none;color:inherit;padding:22.4px 0;border-bottom:1px solid rgba(var(--text-rgb),.08)">
+<div class="work-thumb" style="flex:none;width:260px;aspect-ratio:16/11;border-radius:8px;overflow:hidden;background:var(--card)"><img src="/assets/images/eloraherbalsbylivy-screenshot.png" alt="Elora Herbals by Livy, eloraherbalsbylivy.com" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
 <div style="flex:1;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap">
-<div><div style="font-size:18px;font-weight:500">Elora Herbals by Livy</div><div style="font-size:13px;color:rgba(233,233,237,.5)">Brand presence + shop · eloraherbalsbylivy.com</div></div>
-<span style="font-size:12px;color:#d2cefd;white-space:nowrap">Visit site ↗</span>
+<div><div style="font-size:18px;font-weight:500">Elora Herbals by Livy</div><div style="font-size:13px;color:rgba(var(--text-rgb),.5)">Brand presence + shop · eloraherbalsbylivy.com</div></div>
+<span style="font-size:12px;color:var(--accent-soft);white-space:nowrap">Visit site ↗</span>
 </div>
 </a>
 <a href="https://kcymayroor.in" target="_blank" rel="noopener" class="work-row" style="display:flex;gap:22.4px;align-items:center;text-decoration:none;color:inherit;padding:22.4px 0">
-<div class="work-thumb" style="flex:none;width:260px;aspect-ratio:16/11;border-radius:8px;overflow:hidden;background:#232532"><img src="/assets/images/kcymayroor-in-screenshot.png" alt="KCYM Ayroor Digital Hub, kcymayroor.in" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+<div class="work-thumb" style="flex:none;width:260px;aspect-ratio:16/11;border-radius:8px;overflow:hidden;background:var(--card)"><img src="/assets/images/kcymayroor-in-screenshot.png" alt="KCYM Ayroor Digital Hub, kcymayroor.in" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
 <div style="flex:1;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap">
-<div><div style="font-size:16px;font-weight:500">KCYM Ayroor Digital Hub</div><div style="font-size:13px;color:rgba(233,233,237,.5)">Non-profit · kcymayroor.in</div></div>
-<span style="font-size:12px;color:#d2cefd;white-space:nowrap">Visit site ↗</span>
+<div><div style="font-size:16px;font-weight:500">KCYM Ayroor Digital Hub</div><div style="font-size:13px;color:rgba(var(--text-rgb),.5)">Non-profit · kcymayroor.in</div></div>
+<span style="font-size:12px;color:var(--accent-soft);white-space:nowrap">Visit site ↗</span>
 </div>
 </a>
 </div>
 </div>
-<div class="rv" style="padding:72px 44px;background:#262a60">
+<div class="rv" style="padding:72px 44px;background:#262a60;color:#fff">
 <div style="max-width:900px">
-<p style="margin:0;font-size:30px;line-height:1.4;letter-spacing:-.02em;font-weight:400">“Joyal is an approachable professional who went above and beyond the technical scope, demonstrating a reliable, community-focused heart in his work.”</p>
-<div style="display:flex;align-items:center;gap:11.2px;margin-top:22.4px"><span style="width:28px;height:1px;background:#b5abfc"></span><span style="font-size:13px;color:rgba(233,233,237,.7)">Maria</span></div>
+<p style="margin:0;font-size:30px;line-height:1.4;letter-spacing:-.02em;font-weight:400;color:#fff">"Joyal is an approachable professional who went above and beyond the technical scope, demonstrating a reliable, community-focused heart in his work."</p>
+<div style="display:flex;align-items:center;gap:11.2px;margin-top:22.4px"><span style="width:28px;height:1px;background:#b5abfc"></span><span style="font-size:13px;color:rgba(255,255,255,.7)">Maria</span></div>
 </div>
 </div>
 <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:72px 44px">
 <div>
-<h6 id="notes" style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(233,233,237,.4);scroll-margin-top:88px">Blogs</h6>
+<h6 id="notes" style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4);scroll-margin-top:88px">Blogs</h6>
 <div style="display:flex;flex-direction:column">
-<a href="/blog/migrate-to-shopify-without-losing-seo.html" style="display:flex;justify-content:space-between;gap:22.4px;padding:14px 0;border-bottom:1px solid rgba(233,233,237,.08);text-decoration:none;color:inherit" style-hover="color:#d2cefd"><span style="font-size:15.5px">How to Migrate to Shopify Without Losing SEO Rankings</span><span style="font-size:12px;color:rgba(233,233,237,.4);white-space:nowrap">Aug 24, 2026</span></a>
-<a href="/blog/47-point-shopify-seo-checklist.html" style="display:flex;justify-content:space-between;gap:22.4px;padding:14px 0;border-bottom:1px solid rgba(233,233,237,.08);text-decoration:none;color:inherit" style-hover="color:#d2cefd"><span style="font-size:15.5px">A 47-Point Shopify SEO Checklist</span><span style="font-size:12px;color:rgba(233,233,237,.4);white-space:nowrap">Aug 24, 2026</span></a>
-<a href="/blog/10-shopify-seo-mistakes.html" style="display:flex;justify-content:space-between;gap:22.4px;padding:14px 0;border-bottom:1px solid rgba(233,233,237,.08);text-decoration:none;color:inherit" style-hover="color:#d2cefd"><span style="font-size:15.5px">10 Shopify SEO Mistakes That Show Up on Almost Every Store</span><span style="font-size:12px;color:rgba(233,233,237,.4);white-space:nowrap">Aug 24, 2026</span></a>
-<a href="/blog/index.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13.5px;font-weight:500;color:#9184d9;text-decoration:none" style-hover="color:#b5abfc">View all posts &rarr;</a>
+<a href="/blog/migrate-to-shopify-without-losing-seo.html" style="display:flex;justify-content:space-between;gap:22.4px;padding:14px 0;border-bottom:1px solid rgba(var(--text-rgb),.08);text-decoration:none;color:inherit" style-hover="color:var(--accent-soft)"><span style="font-size:15.5px">How to Migrate to Shopify Without Losing SEO Rankings</span><span style="font-size:12px;color:rgba(var(--text-rgb),.4);white-space:nowrap">Aug 24, 2026</span></a>
+<a href="/blog/47-point-shopify-seo-checklist.html" style="display:flex;justify-content:space-between;gap:22.4px;padding:14px 0;border-bottom:1px solid rgba(var(--text-rgb),.08);text-decoration:none;color:inherit" style-hover="color:var(--accent-soft)"><span style="font-size:15.5px">A 47-Point Shopify SEO Checklist</span><span style="font-size:12px;color:rgba(var(--text-rgb),.4);white-space:nowrap">Aug 24, 2026</span></a>
+<a href="/blog/10-shopify-seo-mistakes.html" style="display:flex;justify-content:space-between;gap:22.4px;padding:14px 0;border-bottom:1px solid rgba(var(--text-rgb),.08);text-decoration:none;color:inherit" style-hover="color:var(--accent-soft)"><span style="font-size:15.5px">10 Shopify SEO Mistakes That Show Up on Almost Every Store</span><span style="font-size:12px;color:rgba(var(--text-rgb),.4);white-space:nowrap">Aug 24, 2026</span></a>
+<a href="/blog/index.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13.5px;font-weight:500;color:var(--accent);text-decoration:none" style-hover="color:var(--accent-hover)">View all posts &rarr;</a>
 </div>
 </div>
-<div style="padding:33.6px;border-radius:8px;background:#232532;box-shadow:0 0 0 1px #3f424d">
+<div style="padding:33.6px;border-radius:8px;background:var(--card);box-shadow:0 0 0 1px var(--card-border)">
 <h3 style="margin:0 0 11.2px;font-size:24px;letter-spacing:-.02em;font-weight:500">One email, when there is something worth sending</h3>
-<p style="margin:0 0 22.4px;font-size:14px;line-height:1.6;color:rgba(233,233,237,.6)">New guides, discounts, and what I learned building the last thing.</p>
-<div style="display:flex;gap:8.4px"><input class="input" placeholder="you@email.com" style="flex:1;font-family:inherit;font-size:14px;color:#e9e9ed;background:#161826;border:1px solid rgba(233,233,237,.16);border-radius:8px;padding:11.2px 14px"/><button style="font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;color:#9184d9;background:transparent;border:1px solid #9184d9;border-radius:8px;padding:11.2px 22.4px" style-hover="background:rgba(145,132,217,.14)">Join</button></div>
-<p style="margin:11.2px 0 0;font-size:12px;color:rgba(233,233,237,.4)">No schedule, no spam.</p>
+<p style="margin:0 0 22.4px;font-size:14px;line-height:1.6;color:rgba(var(--text-rgb),.6)">New guides, discounts, and what I learned building the last thing.</p>
+<div style="display:flex;gap:8.4px"><input class="input" placeholder="you@email.com" style="flex:1;font-family:inherit;font-size:14px;color:var(--text);background:var(--panel);border:1px solid rgba(var(--text-rgb),.16);border-radius:8px;padding:11.2px 14px"/><button style="font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px" style-hover="background:rgba(var(--accent-rgb),.14)">Join</button></div>
+<p style="margin:11.2px 0 0;font-size:12px;color:rgba(var(--text-rgb),.4)">No schedule, no spam.</p>
 </div>
 </div>
-<div style="padding:56px 44px;border-top:1px solid rgba(233,233,237,.08);display:flex;justify-content:space-between;align-items:flex-end">
-<div><div style="font-size:32px;letter-spacing:-.025em;font-weight:500">Say hello</div><a href="mailto:info@joyaljohnson.com" style="font-size:15px;color:#d2cefd">info@joyaljohnson.com</a></div>
-<div style="display:flex;gap:22.4px;font-size:13px;color:rgba(233,233,237,.45)"><a href="/cv.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">CV</a><a href="https://hashp.co" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">hashp.co</a><a href="http://www.instagram.com/ig.callmejo" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Instagram</a><a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">LinkedIn</a><span>© 2026</span></div>
+<div style="padding:56px 44px;border-top:1px solid rgba(var(--text-rgb),.08);display:flex;justify-content:space-between;align-items:flex-end">
+<div><div style="font-size:32px;letter-spacing:-.025em;font-weight:500">Say hello</div><a href="mailto:info@joyaljohnson.com" style="font-size:15px;color:var(--accent-soft)">info@joyaljohnson.com</a></div>
+<div style="display:flex;gap:22.4px;font-size:13px;color:rgba(var(--text-rgb),.45)"><a href="/cv.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">CV</a><a href="https://hashp.co" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">hashp.co</a><a href="http://www.instagram.com/ig.callmejo" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Instagram</a><a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">LinkedIn</a><span>© 2026</span></div>
 </div>
 </div>
 </div>
@@ -210,6 +233,43 @@ document.addEventListener('mousemove', function(e){
     el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
   });
 });
+
+(function(){
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  function currentTheme(){ return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
+  function syncThemeBtn(){
+    var light = currentTheme() === 'light';
+    themeBtn.textContent = light ? '◑' : '◐';
+    themeBtn.setAttribute('aria-pressed', String(light));
+  }
+  themeBtn.addEventListener('click', function(){
+    var next = currentTheme() === 'light' ? 'dark' : 'light';
+    if (next === 'light') root.setAttribute('data-theme', 'light'); else root.removeAttribute('data-theme');
+    try{ localStorage.setItem('jj-theme', next); }catch(e){}
+    syncThemeBtn();
+  });
+  syncThemeBtn();
+
+  var MIN = 85, MAX = 140, STEP = 10;
+  function currentScale(){
+    var z = parseFloat(root.style.zoom);
+    return isNaN(z) ? 100 : Math.round(z * 100);
+  }
+  function applyScale(v){
+    v = Math.max(MIN, Math.min(MAX, v));
+    root.style.zoom = v / 100;
+    try{ localStorage.setItem('jj-font-scale', String(v)); }catch(e){}
+  }
+  document.querySelectorAll('[data-fs]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var action = btn.getAttribute('data-fs');
+      if (action === 'up') applyScale(currentScale() + STEP);
+      else if (action === 'down') applyScale(currentScale() - STEP);
+      else applyScale(100);
+    });
+  });
+})();
 </script>
 </body>
 </html>
