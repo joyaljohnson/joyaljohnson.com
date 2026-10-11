@@ -64,8 +64,14 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
   h2[style*="font-size:38px"],
   h2[style*="font-size:34px"]{ font-size:26px !important; }
   [style*="align-items:center;gap:22.4px;font-size:13.5px"]{
-    flex-wrap:wrap; row-gap:8px; justify-content:flex-start !important;
+    width:100%; gap:18px !important; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; white-space:nowrap; justify-content:flex-start !important;
   }
+  [style*="align-items:center;gap:22.4px;font-size:13.5px"]::-webkit-scrollbar{ display:none; }
+  [style*="align-items:center;gap:22.4px;font-size:13.5px"] > a[href="https://hashp.co"]{ display:none; }
+  [style*="display:flex;gap:22.4px;font-size:13px"]{ flex-wrap:wrap; gap:12px 18px !important; }
+  p[style*="font-size:30px"]{ font-size:21px !important; }
+  p[style*="font-size:23px"]{ font-size:19px !important; }
+  a[href^="blog/"][style*="justify-content:space-between"]{ flex-direction:column; gap:4px !important; }
   [style*="padding:56px 44px;border-top:1px solid rgba(var(--text-rgb),.08);display:flex;justify-content:space-between;align-items:flex-end"]{
     flex-direction:column; align-items:flex-start !important; gap:20px;
   }
