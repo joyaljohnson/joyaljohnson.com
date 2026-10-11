@@ -32,13 +32,13 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 .mq{display:flex;width:max-content;animation:slide 28s linear infinite}
 .mqs{animation:slide 44s linear infinite reverse}
 [style-hover]{transition:background-color .15s ease,border-color .15s ease,color .15s ease,box-shadow .15s ease}
-.wrap{max-width:1280px;margin:0 auto}
+.wrap{max-width:none;margin:0}
 @media (max-width:1320px){ .wrap{max-width:100%} }
 
 /* The design canvas exported this at a fixed 1280px reference width for
    side-by-side review. Make it fluid so it actually works as a real,
    responsive site. */
-[style*="width:1280px;background:var(--panel)"]{ width:100% !important; max-width:1280px; margin:0 auto; }
+[style*="width:1280px;background:var(--panel)"]{ width:100% !important; max-width:none; margin:0; }
 
 .work-thumb img{transition:transform .3s ease}
 .work-row:hover .work-thumb img{transform:scale(1.05)}
