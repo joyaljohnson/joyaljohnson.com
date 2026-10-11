@@ -26,6 +26,12 @@ body{margin:0;background:var(--bg);font-family:Inter,system-ui,sans-serif;transi
 a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover)}
 .a11y-btn{display:inline-flex;align-items:center;justify-content:center;font-family:inherit;cursor:pointer;background:transparent;color:rgba(var(--text-rgb),.7);border:1px solid rgba(var(--text-rgb),.18);border-radius:6px}
 .a11y-btn:hover{color:var(--text);border-color:rgba(var(--text-rgb),.4)}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.sec-label{position:relative;height:20px;min-width:120px;overflow:hidden;font-size:13.5px;color:rgba(var(--text-rgb),.7);text-align:right}
+.sec-label span{position:absolute;right:0;top:0;line-height:20px;white-space:nowrap;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .45s ease}
+.sec-label span.in{transform:translateY(100%);opacity:0}
+.sec-label span.out{transform:translateY(-100%);opacity:0}
+@media (prefers-reduced-motion:reduce){ .sec-label span{transition:opacity .2s ease} .sec-label span.in,.sec-label span.out{transform:none} }
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -60,14 +66,9 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
   [style*="padding:100px 44px 56px"]{ padding:72px 24px 40px !important; }
   [style*="padding:72px 44px"]{ padding:48px 24px !important; }
   [style*="padding:56px 44px"]{ padding:40px 24px !important; }
-  [style*="padding:16.8px 44px"]{ padding:14px 20px !important; flex-wrap:wrap; gap:10px; }
+  [style*="padding:16.8px 44px"]{ padding:14px 20px !important; }
   h2[style*="font-size:38px"],
   h2[style*="font-size:34px"]{ font-size:26px !important; }
-  [style*="align-items:center;gap:22.4px;font-size:13.5px"]{
-    width:100%; gap:18px !important; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; white-space:nowrap; justify-content:flex-start !important;
-  }
-  [style*="align-items:center;gap:22.4px;font-size:13.5px"]::-webkit-scrollbar{ display:none; }
-  [style*="align-items:center;gap:22.4px;font-size:13.5px"] > a[href="https://hashp.co"]{ display:none; }
   [style*="display:flex;gap:22.4px;font-size:13px"]{ flex-wrap:wrap; gap:12px 18px !important; }
   p[style*="font-size:30px"]{ font-size:21px !important; }
   p[style*="font-size:23px"]{ font-size:19px !important; }
@@ -83,24 +84,18 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 <div class="dv-card" style="width:1280px;background:var(--panel);color:var(--text)">
 <div style="position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(var(--panel-rgb),.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(var(--text-rgb),.08)">
 <div style="display:flex;align-items:baseline;gap:10px"><span style="font-weight:500;font-size:15px;letter-spacing:-.01em">Joyal Johnson</span></div>
-<div style="display:flex;align-items:center;gap:22.4px;font-size:13.5px;color:rgba(var(--text-rgb),.7)">
-<a href="#about" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">About</a>
-<a href="#skills" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">What I do</a>
-<a href="#work" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">Work</a>
-<a href="#notes" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">Blogs</a>
-<a href="cv.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">CV</a>
-<a href="https://hashp.co" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" style-hover="color:var(--text)">hashp.co ↗</a>
+<div class="hdr-right">
+<div class="sec-label" id="sec-label" aria-live="polite"></div>
 <button type="button" id="theme-toggle" class="a11y-btn" title="Toggle dark / light mode" aria-label="Toggle dark or light mode" aria-pressed="false" style="width:30px;height:30px;font-size:14px">◐</button>
 </div>
 </div>
-<div data-spot="" style="position:relative;overflow:hidden;padding:100px 44px 56px;background:radial-gradient(620px 420px at var(--mx,26%) var(--my,20%),rgba(var(--accent-rgb),.16),transparent 70%)">
+<div data-section="Home" data-spot="" style="position:relative;overflow:hidden;padding:100px 44px 56px;background:radial-gradient(620px 420px at var(--mx,26%) var(--my,20%),rgba(var(--accent-rgb),.16),transparent 70%)">
 <div style="max-width:1150px;margin:0 auto;text-align:center">
 <div style="display:flex;align-items:center;justify-content:center;margin-bottom:22.4px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft)">Digital Marketing Specialist · 5+ years · Klaviyo Master Certified</span></div>
 <h1 style="margin:0 auto;font-size:clamp(2rem, -0.26rem + 4.73vw, 3.4rem);line-height:1.22;letter-spacing:-.02em;font-weight:500">I help e-commerce brands grow.<br><span style="color:rgba(var(--text-rgb),.45)">Email, CRM, content and analytics, <br>with AI in the loop.</span></h1>
 <p style="margin:28px auto 0;max-width:600px;font-size:16.5px;line-height:1.6;color:rgba(var(--text-rgb),.62)">Multi-channel strategy, content-led campaigns and conversion optimisation for e-commerce and service brands, from planning through to testing and iteration.</p>
 <div style="display:flex;justify-content:center;gap:11.2px;margin-top:33.6px;flex-wrap:wrap">
-<a href="cv.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.14)">View my CV →</a>
-<a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:rgba(var(--text-rgb),.8);border:1px solid rgba(var(--text-rgb),.18);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="border-color:rgba(var(--text-rgb),.4)">Get in touch</a>
+<a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.14)">Get in touch →</a>
 </div>
 </div>
 <div style="margin-top:56px;overflow:hidden;border-top:1px solid rgba(var(--text-rgb),.08);border-bottom:1px solid rgba(var(--text-rgb),.08);padding:14px 0;mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)">
@@ -110,7 +105,7 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 </div>
 </div>
 </div>
-<div class="rv" style="display:grid;grid-template-columns:1fr 1.35fr;gap:56px;padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
+<div class="rv" data-section="About" style="display:grid;grid-template-columns:1fr 1.35fr;gap:56px;padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
 <div>
 <h6 id="about" style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4);scroll-margin-top:88px">About</h6>
 <div style="aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--card)"><img src="assets/images/joyal-johnson.png" alt="Joyal Johnson" style="width:100%;height:100%;object-fit:cover;display:block"></div>
@@ -127,7 +122,7 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 </div>
 </div>
 </div>
-<div class="rv" style="padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
+<div class="rv" data-section="What I do" style="padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
 <h6 id="skills" style="margin:0 0 11.2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4);scroll-margin-top:88px">What I do</h6>
 <h2 style="margin:0 0 33.6px;font-size:38px;letter-spacing:-.025em;font-weight:500">Core strengths</h2>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22.4px">
@@ -139,14 +134,14 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 <div style="padding:22.4px;border-radius:8px;background:linear-gradient(180deg,rgba(var(--accent-rgb),.14),var(--card));box-shadow:0 0 0 1px var(--card-border-hover);display:flex;flex-direction:column;gap:11.2px"><span style="font-size:12px;color:var(--accent-soft)">Exploring</span><div style="font-size:19px;font-weight:500;letter-spacing:-.02em;line-height:1.25">Synthetic marketing</div><p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(var(--text-rgb),.6)">Using AI to speed up research, ideation, content production and testing, while keeping strategy, ethics and human insight at the core.</p></div>
 </div>
 </div>
-<div class="rv" style="padding:56px 44px;background:linear-gradient(180deg,var(--grad-top),var(--panel));border-top:1px solid rgba(var(--text-rgb),.06);display:flex;align-items:center;justify-content:space-between;gap:33.6px;flex-wrap:wrap">
+<div class="rv" data-section="Studio" style="padding:56px 44px;background:linear-gradient(180deg,var(--grad-top),var(--panel));border-top:1px solid rgba(var(--text-rgb),.06);display:flex;align-items:center;justify-content:space-between;gap:33.6px;flex-wrap:wrap">
 <div style="max-width:640px">
 <h6 style="margin:0 0 11.2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4)">Studio · hashp.co</h6>
 <p style="margin:0;font-size:18px;line-height:1.5;letter-spacing:-.01em">I also run hashp.co, a small studio building digital presence for small businesses, non-profits and individuals.</p>
 </div>
 <a href="https://hashp.co" target="_blank" rel="noopener" style="display:inline-flex;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px;text-decoration:none;white-space:nowrap" style-hover="background:rgba(var(--accent-rgb),.12)">Visit hashp.co ↗</a>
 </div>
-<div class="rv" style="padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
+<div class="rv" data-section="Selected work" style="padding:72px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
 <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:33.6px"><h2 id="work" style="margin:0;font-size:38px;letter-spacing:-.025em;font-weight:500;scroll-margin-top:88px">Selected work</h2><span style="font-size:13px;color:rgba(var(--text-rgb),.45)">2024&ndash;2026</span></div>
 <div class="work-list" style="display:flex;flex-direction:column">
 <a href="https://eloraherbalsbylivy.com" target="_blank" rel="noopener" class="work-row" style="display:flex;gap:22.4px;align-items:center;text-decoration:none;color:inherit;padding:22.4px 0;border-bottom:1px solid rgba(var(--text-rgb),.08)">
@@ -171,7 +166,7 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 <div style="display:flex;align-items:center;gap:11.2px;margin-top:22.4px"><span style="width:28px;height:1px;background:#b5abfc"></span><span style="font-size:13px;color:rgba(255,255,255,.7)">Maria</span></div>
 </div>
 </div>
-<div class="rv" style="display:grid;grid-template-columns:1fr;gap:56px;padding:72px 44px">
+<div class="rv" data-section="Blogs" style="display:grid;grid-template-columns:1fr;gap:56px;padding:72px 44px">
 <div>
 <h6 id="notes" style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4);scroll-margin-top:88px">Blogs</h6>
 <div style="display:flex;flex-direction:column">
@@ -221,6 +216,37 @@ document.addEventListener('mousemove', function(e){
   });
   syncThemeBtn();
 
+})();
+
+(function(){
+  var label = document.getElementById('sec-label');
+  var sections = [].slice.call(document.querySelectorAll('[data-section]'));
+  var header = label.closest('[style*="position:sticky"]');
+  var current = null, ticking = false;
+  function show(name){
+    if (name === current) return;
+    current = name;
+    var old = label.querySelectorAll('span');
+    old.forEach(function(o){ o.classList.add('out'); setTimeout(function(){ o.remove(); }, 450); });
+    var n = document.createElement('span');
+    n.textContent = name;
+    n.className = 'in';
+    label.appendChild(n);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ n.className = ''; }); });
+  }
+  function update(){
+    ticking = false;
+    var vh = window.innerHeight;
+    var line = Math.max(header.getBoundingClientRect().bottom + 24, vh * 0.35);
+    var remaining = document.documentElement.scrollHeight - (window.scrollY + vh);
+    if (remaining < vh * 0.5) line += (vh * 0.8 - line) * (1 - Math.max(remaining, 0) / (vh * 0.5));
+    var name = sections[0].getAttribute('data-section');
+    sections.forEach(function(s){ if (s.getBoundingClientRect().top <= line) name = s.getAttribute('data-section'); });
+    show(name);
+  }
+  window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 </body>
