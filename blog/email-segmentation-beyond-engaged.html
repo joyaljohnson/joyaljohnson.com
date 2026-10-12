@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segmentation That Isn't Just "Engaged vs Unengaged" | Joyal Johnson</title>
+<meta name="description" content="Engagement tiers are only the start. How to segment in Klaviyo by purchase behaviour, interest and predictive data, plus the exclusions and sunset flow that keep your list healthy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+<header>
+  <a class="back" href="index.html">&larr; Blogs</a>
+  <a class="brand" href="../index.html">Joyal Johnson</a>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">Email &amp; CRM</div>
+  <h1>Segmentation That Isn't Just "Engaged vs Unengaged"</h1>
+  <div class="meta">Joyal Johnson &middot; Oct 12, 2026</div>
+
+  <p class="lede">Ask most brands how they segment their email list and you'll get some version of the same answer: "We send to engaged subscribers." Usually that means people who've opened or clicked in the last 30, 60 or 90 days.</p>
+
+  <p>And look, that's a good start. Sending to engaged people protects your deliverability and stops you shouting at an inbox that stopped listening months ago. But if engagement is your only segment, every person on that list gets the same message, whether they've bought from you ten times or never at all.</p>
+
+  <p>Segmentation is where email starts to feel personal. Here's how I think about going beyond the basics in Klaviyo, without building 50 segments you'll never use.</p>
+
+  <h2>Start with the foundation: engagement tiers</h2>
+  <p>Before anything fancy, get your engagement segments right. I like having a few tiers rather than one:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tier</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Highly engaged</strong></td><td>Opened or clicked recently, maybe in the last 30 days</td></tr>
+        <tr><td><strong>Engaged</strong></td><td>Active in the last 60 to 90 days</td></tr>
+        <tr><td><strong>Cooling off</strong></td><td>No activity in 90 to 180 days</td></tr>
+        <tr><td><strong>Unengaged</strong></td><td>Nothing for 180+ days</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="warning"><p>One caveat: opens aren't as reliable as they used to be because Apple Mail Privacy Protection can register opens that didn't really happen. Clicks, site visits and orders are stronger signals, so I'd lean on those where you can.</p></div>
+  <p>Your biggest campaigns go to the top tiers. The cooling-off group gets fewer, higher-value sends. The unengaged group goes into a sunset flow (more on that below) instead of every campaign.</p>
+
+  <h2>Segment by purchase behaviour</h2>
+  <p>This is where it starts getting good. How someone has bought from you tells you more than whether they opened an email.</p>
+  <div class="layer-stack">
+    <div class="layer"><div class="layer-num">Never purchased</div><p>Subscribers who haven't bought yet need trust and a reason to make the first move. Social proof, bestsellers, how-it-works content.</p></div>
+    <div class="layer"><div class="layer-num">One-time buyers</div><p>The hardest jump in ecommerce is from first order to second. These people need a reason to come back: complementary products, usage tips, a nudge at the right time.</p></div>
+    <div class="layer"><div class="layer-num">Repeat customers</div><p>They already like you. They don't need a discount to convince them. Give them early access, new launches first, maybe a thank-you every so often.</p></div>
+    <div class="layer"><div class="layer-num">VIPs</div><p>Your top customers by total spend or number of orders. Treat them like it. Exclusive drops, a personal-feeling note, first dibs on limited stock.</p></div>
+  </div>
+  <p>Just splitting a campaign between "never purchased" and "purchased" and changing the offer or message can make a big difference.</p>
+
+  <h2>Segment by what they're interested in</h2>
+  <p>If you sell more than one type of product, sending everyone the same new arrival email is a missed opportunity. Klaviyo lets you build segments based on what people have viewed, added to cart or bought.</p>
+  <p>A few ways to use this:</p>
+  <ul>
+    <li>People who've bought from one category get campaigns featuring that category first.</li>
+    <li>People who browsed a product range but never bought get content that helps them choose.</li>
+    <li>People who bought a product that runs out get a reminder around the time they're likely to need more.</li>
+  </ul>
+  <p>If your sign-up forms ask a simple question ("What are you shopping for?"), store the answer as a profile property and you've got another easy segment from day one.</p>
+
+  <h2>Use Klaviyo's predictive analytics (if you have the data)</h2>
+  <p>Once a brand has enough order history, Klaviyo can predict things like customer lifetime value, churn risk and the expected date of someone's next order. These are really handy for:</p>
+  <ul>
+    <li><strong>High churn risk segments:</strong> catch people before they drift away, with a winback-style message or a reminder of what's new.</li>
+    <li><strong>Expected next order date:</strong> time a replenishment or "running low?" email around when they're likely to buy anyway.</li>
+    <li><strong>Predicted high CLV:</strong> spot future VIPs early and look after them.</li>
+  </ul>
+  <p>If you're a newer brand and these aren't available yet, don't stress. Purchase-based segments do a lot of the same job manually.</p>
+
+  <h2>Don't forget your exclusion segments</h2>
+  <p>Segmentation isn't only about who gets a message. It's also about who doesn't. A few exclusions I'd almost always use:</p>
+  <ul>
+    <li>Exclude people who just bought from heavy promotional campaigns for a few days.</li>
+    <li>Exclude people who are currently in your <a href="welcome-flow-leaks.html">welcome</a> or abandoned checkout flows from overlapping campaigns, or at least use Smart Sending to avoid doubling up.</li>
+    <li>Exclude unengaged profiles from regular campaigns.</li>
+  </ul>
+  <p>Getting exclusions right is one of the easiest ways to make your emails feel less spammy.</p>
+
+  <h2>Have a sunset flow for the people who've gone quiet</h2>
+  <p>Instead of sending forever to people who never open, build a sunset flow. Send one or two emails asking if they still want to hear from you, maybe with a reason to stay. If they don't engage, stop sending to them. It feels scary to "lose" subscribers, but a smaller list that actually reads your emails is far more valuable than a big one that drags down your sender reputation.</p>
+
+  <h2>Keep it manageable</h2>
+  <p>The trap with segmentation is going overboard. Fifty segments sounds impressive until you have to write a different version of every campaign.</p>
+  <p>My rule: start with engagement tiers and the purchase segments (never purchased, one-time, repeat, VIP). Get those working. Then add interest-based segments for your biggest product categories. Only build a new segment if you're actually going to send it something different.</p>
+
+  <div class="callout">
+    <p>Segmentation isn't about being clever. It's about sending fewer emails that feel like they were written for the person reading them.</p>
+  </div>
+
+  <div class="cta">
+    <p>Want a segmentation setup that actually gets used?</p>
+    <a href="https://hashp.co" target="_blank" rel="noopener">Work with me at hashp.co &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="../index.html">joyaljohnson.com</a></footer>
+</body>
+</html>
