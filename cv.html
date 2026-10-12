@@ -21,6 +21,7 @@
 }
 </script>
 <style>
+h1,h2,h3,h4,h5,h6{text-wrap:balance}p,li,blockquote,figcaption{text-wrap:pretty}
 :root{
 --bg:#0e0f16;--panel:#161826;--panel-rgb:22,24,38;--card:#232532;--card-border:#3f424d;--card-border-hover:#5d5294;--grad-top:#1a1c2b;
 --text:#e9e9ed;--text-rgb:233,233,237;
@@ -48,6 +49,7 @@ a{color:inherit;text-decoration:none}
 .role:last-child{border-bottom:none}
 .role ul{margin:10px 0 0;padding-left:18px}
 .role li{font-size:14px;line-height:1.65;color:rgba(var(--text-rgb),.65);margin-bottom:6px}
+[style*="align-items:baseline;gap:10px"] > .pill{display:inline-block;min-width:108px;box-sizing:border-box;text-align:center;flex:none}
 .pill{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-soft);border:1px solid rgba(var(--accent-rgb),.4);border-radius:4px;padding:2.8px 7px;white-space:nowrap}
 .skill-card{padding:20px;border-radius:8px;background:var(--card);box-shadow:0 0 0 1px var(--card-border);display:flex;flex-direction:column;gap:8px}
 .skill-card h4{margin:0;font-size:13px;letter-spacing:.02em;color:rgba(var(--text-rgb),.85)}
@@ -63,6 +65,8 @@ a{color:inherit;text-decoration:none}
   h2[style*="font-size:32px"]{ font-size:24px !important; }
   [style*="align-items:center;gap:12px;font-size:13.5px"]{ flex-wrap:wrap; row-gap:8px; justify-content:flex-start !important; }
   .role-head{flex-direction:column;align-items:flex-start !important;gap:6px !important}
+  .role-sep{display:none}
+  .role-co{display:block;margin-top:2px}
 }
 
 @media print{
@@ -112,7 +116,7 @@ a{color:inherit;text-decoration:none}
 
 <div class="role">
 <div class="role-head" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
-<div><span style="font-size:18px;font-weight:500">Marketing &amp; Content Placement</span><span style="color:rgba(var(--text-rgb),.45)"> · Mackenzie &amp; George</span></div>
+<div><span style="font-size:18px;font-weight:500">Marketing &amp; Content Placement</span><span class="role-sep" style="color:rgba(var(--text-rgb),.45)"> · </span><span class="role-co" style="color:rgba(var(--text-rgb),.45)">Mackenzie &amp; George</span></div>
 <span style="font-size:13px;color:rgba(var(--text-rgb),.45);white-space:nowrap">May 2026 – Jul 2026</span>
 </div>
 <ul>
@@ -127,7 +131,7 @@ a{color:inherit;text-decoration:none}
 
 <div class="role">
 <div class="role-head" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
-<div><span style="font-size:18px;font-weight:500">Email Marketing Coordinator</span><span style="color:rgba(var(--text-rgb),.45)"> · Gosh Digital</span></div>
+<div><span style="font-size:18px;font-weight:500">Email Marketing Coordinator</span><span class="role-sep" style="color:rgba(var(--text-rgb),.45)"> · </span><span class="role-co" style="color:rgba(var(--text-rgb),.45)">Gosh Digital</span></div>
 <span style="font-size:13px;color:rgba(var(--text-rgb),.45);white-space:nowrap">Aug 2021 – Present</span>
 </div>
 <ul>
@@ -142,7 +146,7 @@ a{color:inherit;text-decoration:none}
 
 <div class="role">
 <div class="role-head" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
-<div><span style="font-size:18px;font-weight:500">Email Marketing Associate</span><span style="color:rgba(var(--text-rgb),.45)"> · Gosh Digital</span></div>
+<div><span style="font-size:18px;font-weight:500">Email Marketing Associate</span><span class="role-sep" style="color:rgba(var(--text-rgb),.45)"> · </span><span class="role-co" style="color:rgba(var(--text-rgb),.45)">Gosh Digital</span></div>
 <span style="font-size:13px;color:rgba(var(--text-rgb),.45);white-space:nowrap">Feb 2021 – Aug 2021</span>
 </div>
 <ul>
@@ -184,7 +188,7 @@ a{color:inherit;text-decoration:none}
 <h6 style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4)">Professional qualifications</h6>
 <div style="display:flex;flex-direction:column;gap:14px">
 <div style="display:flex;align-items:baseline;gap:10px"><span class="pill">Certified</span><span style="font-size:14.5px">Certified Klaviyo Master, Klaviyo</span></div>
-<div style="display:flex;align-items:baseline;gap:10px"><span class="pill">Certified</span><span style="font-size:14.5px">Google Digital Marketing and E-Commerce Professional Certificate, Google</span></div>
+<div style="display:flex;align-items:baseline;gap:10px"><span class="pill">Certified</span><span style="font-size:14.5px">Google Digital Marketing and E&#8209;Commerce Professional Certificate, Google</span></div>
 <div style="display:flex;align-items:baseline;gap:10px"><span class="pill" style="color:rgba(var(--text-rgb),.55);border-color:rgba(var(--text-rgb),.3)">In progress</span><span style="font-size:14.5px">Certified Digital Marketing Professional, DMI PRO</span></div>
 </div>
 </div>
@@ -203,14 +207,14 @@ a{color:inherit;text-decoration:none}
 <section class="rv" style="padding:64px 44px;border-top:1px solid rgba(var(--text-rgb),.06)">
 <h6 style="margin:0 0 22.4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--text-rgb),.4)">Leadership &amp; volunteering</h6>
 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 32px;font-size:14px;line-height:1.7;color:rgba(var(--text-rgb),.6)">
-<div><span style="color:var(--text)">Student Buddy</span>, Career Service Team, UWS <span style="color:rgba(var(--text-rgb),.4)">(Jan 2026 – Jul 2026)</span></div>
-<div><span style="color:var(--text)">Content Volunteer</span>, Renfrewshire Council, Paisley Christmas Lights On <span style="color:rgba(var(--text-rgb),.4)">(Dec 2025)</span></div>
-<div><span style="color:var(--text)">Media Team Coordinator</span>, KCYM Moozhikulam Forane <span style="color:rgba(var(--text-rgb),.4)">(Dec 2024 – Present)</span></div>
-<div><span style="color:var(--text)">Media Team Coordinator</span>, KCYM Ayroor Unit <span style="color:rgba(var(--text-rgb),.4)">(Aug 2023 – Dec 2025)</span></div>
-<div><span style="color:var(--text)">Media Team Member</span>, St. Antony's Church Ayroor <span style="color:rgba(var(--text-rgb),.4)">(Nov 2020 – Present)</span></div>
-<div><span style="color:var(--text)">Chairperson</span>, IEEE Student Branch, SSET <span style="color:rgba(var(--text-rgb),.4)">(Feb 2019 – Mar 2020)</span></div>
-<div><span style="color:var(--text)">Technical Head</span>, EXPLORA Association, ECE Dept, SSET <span style="color:rgba(var(--text-rgb),.4)">(Oct 2019 – Sep 2020)</span></div>
-<div><span style="color:var(--text)">Student Member</span>, MHRD Institute Innovation Council, SSET, Govt of India <span style="color:rgba(var(--text-rgb),.4)">(Dec 2018 – Jul 2019)</span></div>
+<div><span style="color:var(--text)">Student Buddy</span>, Career Service Team, UWS <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Jan 2026 – Jul 2026)</span></div>
+<div><span style="color:var(--text)">Content Volunteer</span>, Renfrewshire Council, Paisley Christmas Lights On <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Dec 2025)</span></div>
+<div><span style="color:var(--text)">Media Team Coordinator</span>, KCYM Moozhikulam Forane <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Dec 2024 – Present)</span></div>
+<div><span style="color:var(--text)">Media Team Coordinator</span>, KCYM Ayroor Unit <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Aug 2023 – Dec 2025)</span></div>
+<div><span style="color:var(--text)">Media Team Member</span>, St. Antony's Church Ayroor <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Nov 2020 – Present)</span></div>
+<div><span style="color:var(--text)">Chairperson</span>, IEEE Student Branch, SSET <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Feb 2019 – Mar 2020)</span></div>
+<div><span style="color:var(--text)">Technical Head</span>, EXPLORA Association, ECE Dept, SSET <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Oct 2019 – Sep 2020)</span></div>
+<div><span style="color:var(--text)">Student Member</span>, MHRD Institute Innovation Council, SSET, Govt of India <span style="color:rgba(var(--text-rgb),.4);white-space:nowrap">(Dec 2018 – Jul 2019)</span></div>
 </div>
 </section>
 
@@ -234,7 +238,7 @@ a{color:inherit;text-decoration:none}
 
 <div style="padding:48px 44px;border-top:1px solid rgba(var(--text-rgb),.08);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
 <div><div style="font-size:26px;letter-spacing:-.025em;font-weight:500">Let's talk</div><a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="font-size:15px;color:inherit;text-decoration:none">Connect on LinkedIn ↗</a></div>
-<div class="no-print" style="display:flex;gap:22.4px;font-size:13px;color:rgba(var(--text-rgb),.45)"><a href="https://hashp.co" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" class="soc"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>hashp.co</a><a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" class="soc"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a><span>© 2026</span></div>
+<div class="no-print" style="display:flex;gap:22.4px;font-size:13px;color:rgba(var(--text-rgb),.45)"><a href="https://hashp.co" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" class="soc"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>hashp.co</a><span>© 2026</span></div>
 </div>
 
 </div>
