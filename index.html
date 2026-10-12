@@ -37,6 +37,8 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 .card-ico{display:flex;align-items:center;justify-content:space-between;color:var(--accent-soft)}
 .card-ico .num{font-size:12px}
 .soc{display:inline-flex;align-items:center;gap:6px}
+.grow{color:var(--accent-soft);white-space:nowrap}
+.grow-ico{display:inline-block;width:.72em;height:.72em;margin-left:.16em;vertical-align:-.02em}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -80,8 +82,10 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
   .eyebrow{line-height:1.8}
   .eyebrow .eb{display:block}
   .eyebrow .eb-sep{display:none}
-  h1 br{display:none}
-  h1 > span{display:block;text-wrap:balance}
+  .hero-h1{font-size:min(calc((100vw - 48px) / 12.6), 3.4rem) !important;line-height:1.16 !important;white-space:nowrap;text-wrap:nowrap}
+  .hero-h1 > br{display:none}
+  .hero-h1 .grow{display:block;font-size:1.3em;line-height:1.1}
+  .hero-h1 .hero-sub{display:block;margin-top:.45em;font-size:min(calc((100vw - 48px) / 16.5), 2.3rem);line-height:1.28}
   [style*="display:flex;gap:44px;margin-top:33.6px"]{ display:grid !important; grid-template-columns:repeat(3,1fr); gap:12px !important; }
   [style*="display:flex;gap:44px;margin-top:33.6px"] > div > div:first-child{ font-size:21px !important; }
   p[style*="font-size:23px"]{ font-size:19px !important; }
@@ -105,7 +109,7 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 <div data-section="Home" data-spot="" style="position:relative;overflow:hidden;padding:100px 44px 56px;background:radial-gradient(620px 420px at var(--mx,26%) var(--my,20%),rgba(var(--accent-rgb),.16),transparent 70%)">
 <div style="max-width:1150px;margin:0 auto;text-align:center">
 <div style="display:flex;align-items:center;justify-content:center;margin-bottom:22.4px"><span class="eyebrow" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft)"><span class="eb">Digital Marketing Specialist</span><span class="eb-sep"> · </span><span class="eb">5+ years · Klaviyo Master Certified</span></span></div>
-<h1 style="margin:0 auto;font-size:clamp(2rem, -0.26rem + 4.73vw, 3.4rem);line-height:1.22;letter-spacing:-.02em;font-weight:500">I help e-commerce brands grow.<br><span style="color:rgba(var(--text-rgb),.45)">Email, CRM, content and analytics, <br>with AI in the loop.</span></h1>
+<h1 class="hero-h1" style="margin:0 auto;font-size:clamp(2rem, -0.26rem + 4.73vw, 3.4rem);line-height:1.22;letter-spacing:-.02em;font-weight:500">I help e-commerce brands <span class="grow">grow.<svg class="grow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span><br><span class="hero-sub" style="color:rgba(var(--text-rgb),.45)">Email, CRM, content and analytics, <br>with AI in the loop.</span></h1>
 <p style="margin:28px auto 0;max-width:600px;font-size:16.5px;line-height:1.6;color:rgba(var(--text-rgb),.62)">Multi-channel strategy, content-led campaigns and conversion optimisation for e-commerce and service brands, from planning through to testing and iteration.</p>
 <div style="display:flex;justify-content:center;gap:11.2px;margin-top:33.6px;flex-wrap:wrap">
 <a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.14)">Get in touch →</a>
