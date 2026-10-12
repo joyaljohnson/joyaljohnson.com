@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>try{if(localStorage.getItem('jj-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
 <title>Blogs | Joyal Johnson</title>
 <meta name="description" content="Guides on eCommerce SEO, content marketing, link building, and AI-assisted digital presence, from real campaigns.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,11 +35,12 @@ h1{margin:0 0 12px;font-size:44px;line-height:1.1;letter-spacing:-.03em;font-wei
 @media (max-width:600px){ .post-title{font-size:19px} }
 footer{padding:32px 44px;border-top:1px solid rgba(233,233,237,.08);text-align:center;font-size:12px;color:rgba(233,233,237,.4)}
 </style>
+<link rel="stylesheet" href="../assets/css/theme.css">
 </head>
 <body>
 <header>
   <a class="back" href="../index.html">&larr; Home</a>
-  <a class="brand" href="../index.html">Joyal Johnson</a>
+  <div class="hdr-r"><a class="brand" href="../index.html">Joyal Johnson</a><button type="button" id="theme-toggle" class="theme-btn" title="Toggle dark / light mode" aria-label="Toggle dark or light mode" aria-pressed="false"></button></div>
 </header>
 
 <div class="wrap">
@@ -220,5 +222,6 @@ document.querySelectorAll('.filter').forEach(function(btn){
   });
 });
 </script>
+<script src="../assets/js/theme.js"></script>
 </body>
 </html>

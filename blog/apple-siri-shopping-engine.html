@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>try{if(localStorage.getItem('jj-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
 <title>Apple Just Turned Siri Into a Shopping Engine | Joyal Johnson</title>
 <meta name="description" content="Siri AI is conversational, takes action across apps, and runs on Gemini and Google's Shopping Graph. Here's what to fix in your Merchant Center feed and product data this quarter.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/blog.css">
+<link rel="stylesheet" href="../assets/css/theme.css">
 </head>
 <body>
 <header>
   <a class="back" href="index.html">&larr; Blogs</a>
-  <a class="brand" href="../index.html">Joyal Johnson</a>
+  <div class="hdr-r"><a class="brand" href="../index.html">Joyal Johnson</a><button type="button" id="theme-toggle" class="theme-btn" title="Toggle dark / light mode" aria-label="Toggle dark or light mode" aria-pressed="false"></button></div>
 </header>
 
 <div class="wrap">
@@ -56,5 +58,6 @@
 </div>
 
 <footer>&copy; 2026 Joyal Johnson &middot; <a href="../index.html">joyaljohnson.com</a></footer>
+<script src="../assets/js/theme.js"></script>
 </body>
 </html>
