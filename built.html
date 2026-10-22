@@ -11,23 +11,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/blog.css">
 <style>
-.case{margin-top:72px;padding-top:40px;border-top:1px solid rgba(233,233,237,.08)}
+.case{margin-top:28px;padding:32px 32px 24px;border-radius:12px;background:#161826;border:1px solid rgba(233,233,237,.1);scroll-margin-top:84px}
+.case:first-of-type{margin-top:40px}
+@media (max-width:600px){ .case{padding:22px 18px 16px} }
+.case .table-wrap{background:#12131d}
 .case-num{font:600 12px ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#d2cefd;margin-bottom:10px}
 .case h2{margin:0 0 6px}
 .case-sub{margin:0 0 22px;font-size:17px;color:rgba(233,233,237,.6)}
-.callout.result{margin:0 0 24px;border-left:3px solid #9184d9}
+.callout.result{margin:0 0 24px;background:#1f2133;border-left:3px solid #9184d9}
 p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
 .toc{list-style:none;padding:0;margin:0 0 8px}
 .toc li{margin:0}
 .toc a{display:flex;gap:14px;padding:9px 0;text-decoration:none;color:rgba(233,233,237,.75);border-bottom:1px solid rgba(233,233,237,.06);font-size:15px}
 .toc a span{font:600 12px ui-monospace,Menlo,monospace;color:#d2cefd;padding-top:3px;flex:none}
 .toc a:hover{color:#e9e9ed}
-:root[data-theme="light"] .case{border-color:rgba(27,26,34,.1)}
+:root[data-theme="light"] .case{background:#ffffff;border-color:#ddd7ec}
+:root[data-theme="light"] .case .table-wrap{background:#faf9fd}
 :root[data-theme="light"] .case-num,:root[data-theme="light"] .toc a span{color:#54459e}
 :root[data-theme="light"] .case-sub,:root[data-theme="light"] p.role{color:rgba(27,26,34,.6)}
 :root[data-theme="light"] .toc a{color:rgba(27,26,34,.75);border-color:rgba(27,26,34,.08)}
 :root[data-theme="light"] .toc a:hover{color:#1b1a22}
-:root[data-theme="light"] .callout.result{border-left-color:#6d5cc4}
+:root[data-theme="light"] .callout.result{border-left-color:#6d5cc4;background:#f4f2fb}
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0 56px}
+@media (max-width:600px){ .case-grid{grid-template-columns:1fr} }
+.case-card{display:flex;flex-direction:column;gap:8px;text-align:left;font:inherit;color:inherit;cursor:pointer;padding:22px;border-radius:12px;background:#161826;border:1px solid rgba(233,233,237,.1);transition:border-color .15s ease,transform .15s ease}
+.case-card:hover,.case-card:focus-visible{border-color:rgba(145,132,217,.55);transform:translateY(-2px);outline:none}
+.cc-num{font:600 12px ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#d2cefd}
+.cc-title{font-size:18px;font-weight:500;color:#fff;letter-spacing:-.01em;line-height:1.3}
+.cc-sub{font-size:14px;line-height:1.5;color:rgba(233,233,237,.6);flex:1}
+.cc-more{font-size:13px;font-weight:500;color:#9184d9;margin-top:6px}
+#case-dialog{width:min(820px,calc(100vw - 48px));max-height:calc(100vh - 64px);padding:0;border:1px solid rgba(233,233,237,.12);border-radius:14px;background:#0e0f16;color:#e9e9ed;overflow:auto}
+#case-dialog::backdrop{background:rgba(5,6,12,.72);backdrop-filter:blur(4px)}
+#case-dialog .case{margin:0;border:0;border-radius:0;background:transparent;padding:40px 44px 32px}
+@media (max-width:600px){ #case-dialog{width:100vw;max-width:100vw;height:100%;max-height:100%;border-radius:0;border:0} #case-dialog .case{padding:56px 20px 28px} }
+.dlg-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;width:34px;height:34px;border-radius:8px;border:1px solid rgba(233,233,237,.18);background:#161826;color:#e9e9ed;font-size:20px;line-height:1;cursor:pointer;z-index:2}
+.dlg-close:hover{border-color:rgba(233,233,237,.45)}
+body.dlg-open{overflow:hidden}
+:root[data-theme="light"] .case-card{background:#fff;border-color:#ddd7ec}
+:root[data-theme="light"] .case-card:hover{border-color:#b3a5e8}
+:root[data-theme="light"] .cc-num{color:#54459e}
+:root[data-theme="light"] .cc-title{color:#1b1a22}
+:root[data-theme="light"] .cc-sub{color:rgba(27,26,34,.6)}
+:root[data-theme="light"] .cc-more{color:#6d5cc4}
+:root[data-theme="light"] #case-dialog{background:#f6f5fb;color:#1b1a22;border-color:#ddd7ec}
+:root[data-theme="light"] #case-dialog::backdrop{background:rgba(27,26,34,.45)}
+:root[data-theme="light"] .dlg-close{background:#fff;color:#1b1a22;border-color:#ddd7ec}
 </style>
 <link rel="stylesheet" href="assets/css/theme.css">
 </head>
@@ -42,7 +70,8 @@ p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
   <div class="eyebrow">Email &amp; CRM</div>
   <h1>What I've built</h1>
   <p class="lede">Klaviyo segmentation, flow architecture and flow logic for eleven DTC and e-commerce brands.</p>
-  <ul class="toc"><li><a href="#case-1"><span>01</span>Health &amp; wellness brand</a></li><li><a href="#case-2"><span>02</span>Long-established food brand</a></li><li><a href="#case-3"><span>03</span>Premium pet brand</a></li><li><a href="#case-4"><span>04</span>Community apparel brand</a></li><li><a href="#case-5"><span>05</span>Spirits &amp; wine retailer</a></li><li><a href="#case-6"><span>06</span>Home furnishings brand</a></li><li><a href="#case-7"><span>07</span>Handmade pet accessories</a></li><li><a href="#case-8"><span>08</span>Premium furniture brand</a></li><li><a href="#case-9"><span>09</span>Multi-event organiser</a></li><li><a href="#case-10"><span>10</span>Lifestyle brand</a></li><li><a href="#case-11"><span>11</span>Fermented beverage brand</a></li></ul>
+  <div class="case-grid"><button type="button" class="case-card" data-case="case-1"><span class="cc-num">01</span><span class="cc-title">Health &amp; wellness brand</span><span class="cc-sub">£11.8M email revenue over 31 months</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-2"><span class="cc-num">02</span><span class="cc-title">Long-established food brand</span><span class="cc-sub">Reviving a dormant list with 14 segments and 9 flows</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-3"><span class="cc-num">03</span><span class="cc-title">Premium pet brand</span><span class="cc-sub">£667K attributed revenue, flows as the backbone</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-4"><span class="cc-num">04</span><span class="cc-title">Community apparel brand</span><span class="cc-sub">220% growth in attributed revenue</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-5"><span class="cc-num">05</span><span class="cc-title">Spirits &amp; wine retailer</span><span class="cc-sub">296.9% growth in the industry's slowest quarter</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-6"><span class="cc-num">06</span><span class="cc-title">Home furnishings brand</span><span class="cc-sub">153.6% growth in attributed revenue</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-7"><span class="cc-num">07</span><span class="cc-title">Handmade pet accessories</span><span class="cc-sub">Email revenue tripled in two months</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-8"><span class="cc-num">08</span><span class="cc-title">Premium furniture brand</span><span class="cc-sub">59.3% revenue growth without discounting</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-9"><span class="cc-num">09</span><span class="cc-title">Multi-event organiser</span><span class="cc-sub">£28K from one funnel, 4,153 registrations</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-10"><span class="cc-num">10</span><span class="cc-title">Lifestyle brand</span><span class="cc-sub">A 5-flow, 19-email lifecycle system</span><span class="cc-more">Read the build &rarr;</span></button><button type="button" class="case-card" data-case="case-11"><span class="cc-num">11</span><span class="cc-title">Fermented beverage brand</span><span class="cc-sub">A welcome flow built as lifecycle foundation</span><span class="cc-more">Read the build &rarr;</span></button></div>
+<div id="case-store" hidden>
 <section class="case" id="case-1"><div class="case-num">01</div><h2>Health &amp; wellness brand</h2><p class="case-sub">£11.8M email revenue over 31 months</p>
 <div class="callout result"><p><strong>Result:</strong> Email grew from ~17% to over 50% of total store revenue at peak, and held 35–47% two and a half years in.</p></div>
 <p><strong>Brand:</strong> High-ticket health &amp; wellness DTC brand, large and fast-growing list.</p>
@@ -72,7 +101,7 @@ p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
 <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Total email revenue (31 months)</td><td>~£11.8M</td></tr><tr><td>Peak month</td><td>£1.23M, 50.45% of store revenue</td></tr><tr><td>Flow revenue</td><td>£75K–£300K per month, automated</td></tr><tr><td>Open rate after cleanup</td><td>39.54%</td></tr><tr><td>Email share of store revenue (2023–24)</td><td>30–47%</td></tr></tbody></table></div>
 <p class="role"><strong>My role:</strong> Flow builds, flow logic, segmentation, list cleanup and suppression setup. Creative and copy by the team.</p>
 </section>
-<section class="case" id="case-2"><div class="case-num">02</div><h2>Long-established food brand</h2><p class="case-sub">reviving a dormant list with 14 segments and 9 flows</p>
+<section class="case" id="case-2"><div class="case-num">02</div><h2>Long-established food brand</h2><p class="case-sub">Reviving a dormant list with 14 segments and 9 flows</p>
 <div class="callout result"><p><strong>Result:</strong> A list that hadn't been emailed properly in over a year returned a 41.6% open rate and 7.56% click rate on its first reactivation send, with zero spam complaints.</p></div>
 <p><strong>Brand:</strong> Decades-old clean-ingredient food brand that lost customers after a product change, then reversed it without telling them.</p>
 <h3>Starting state</h3>
@@ -158,7 +187,7 @@ p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
 <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Year one total revenue</td><td>£1.30M (+109.4%)</td></tr><tr><td>Flow conversion value</td><td>+150.9%</td></tr><tr><td>Open rate</td><td>+44.3%</td></tr><tr><td>Year two attributed revenue</td><td>£681K (+153.6% YoY)</td></tr><tr><td>Email recipients</td><td>+194.9%</td></tr></tbody></table></div>
 <p class="role"><strong>My role:</strong> Segment architecture, flow builds, SMS timing logic and reporting. Design and copy by the team.</p>
 </section>
-<section class="case" id="case-7"><div class="case-num">07</div><h2>Handmade pet accessories</h2><p class="case-sub">email revenue tripled in two months</p>
+<section class="case" id="case-7"><div class="case-num">07</div><h2>Handmade pet accessories</h2><p class="case-sub">Email revenue tripled in two months</p>
 <div class="callout result"><p><strong>Result:</strong> Flow revenue doubled in four weeks and total email revenue tripled in two months, a 24x ROI on the engagement.</p></div>
 <p><strong>Brand:</strong> Handmade pet accessories with 2,000+ five-star reviews and a loyal customer base.</p>
 <p><strong>Starting state:</strong> Zero segmentation, first-time subscribers and three-time buyers got the same email. The welcome flow was a single discount email.</p>
@@ -203,14 +232,14 @@ p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
 <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Luncheon funnel revenue</td><td>£27,800</td></tr><tr><td>Session-pass funnel revenue</td><td>£14,300</td></tr><tr><td>Entry-event conversion rate</td><td>4.13%</td></tr><tr><td>Concert registrations captured</td><td>4,153+</td></tr><tr><td>Total email revenue</td><td>£10,400 across 65,406 emails, 147 orders</td></tr><tr><td>Cart abandonment flow</td><td>33.63% open, 10.18% click, 30%+ click-to-open</td></tr><tr><td>Workflow campaigns</td><td>33.73% open, 5.20% click</td></tr></tbody></table></div>
 <p class="role"><strong>My role:</strong> Flow builds, trigger logic, tagging and segmentation. Funnel pages, paid media, design and copy by the team.</p>
 </section>
-<section class="case" id="case-10"><div class="case-num">10</div><h2>Lifestyle brand</h2><p class="case-sub">a 5-flow, 19-email lifecycle system</p>
+<section class="case" id="case-10"><div class="case-num">10</div><h2>Lifestyle brand</h2><p class="case-sub">A 5-flow, 19-email lifecycle system</p>
 <div class="callout result"><p><strong>Result:</strong> A complete always-on retention system covering every core lifecycle stage, built so the brand's emails run without anyone writing that week.</p></div>
 <p><strong>Brand:</strong> Warm, outdoor-lifestyle DTC brand with a strong existing identity but no lifecycle infrastructure.</p>
 <p><strong>What I built</strong>, five flows mapped to five lifecycle stages:</p>
 <div class="table-wrap"><table><thead><tr><th>Flow</th><th>Emails</th><th>Job</th></tr></thead><tbody><tr><td>Welcome</td><td>5</td><td>Introduce the brand and earn the first order without leaning on discounts</td></tr><tr><td>Abandoned cart</td><td>3</td><td>Tightly timed recovery for shoppers who reached the cart</td></tr><tr><td>Browse abandonment</td><td>3</td><td>Re-engage interest, tailored to the products viewed</td></tr><tr><td>Post-purchase</td><td>4</td><td>Confirmation, anticipation, education, then the bridge to a second order</td></tr><tr><td>Win-back</td><td>4</td><td>Reactivate lapsed customers; no heavy discount on the first touch</td></tr></tbody></table></div>
 <p class="role"><strong>My role:</strong> Lifecycle mapping into flows, trigger and filter setup, timing and exit logic for all 19 emails. Design and copy by the team.</p>
 </section>
-<section class="case" id="case-11"><div class="case-num">11</div><h2>Fermented beverage brand</h2><p class="case-sub">a welcome flow built as lifecycle foundation</p>
+<section class="case" id="case-11"><div class="case-num">11</div><h2>Fermented beverage brand</h2><p class="case-sub">A welcome flow built as lifecycle foundation</p>
 <div class="callout result"><p><strong>Result:</strong> A 7-email welcome flow wired with the segmentation hooks and profile data needed for every later lifecycle flow, so nothing has to be rebuilt as the brand grows.</p></div>
 <p><strong>Brand:</strong> Founder-led beverage brand in a category many first-time buyers don't fully understand.</p>
 <p><strong>Starting state:</strong> No structured welcome, no customer education, no retention infrastructure.</p>
@@ -222,6 +251,8 @@ p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
 </ol>
 <p class="role"><strong>My role:</strong> Flow build, sequence timing, tagging and segmentation setup. Brand voice, copy and design by the team.</p>
 </section>
+</div>
+<dialog id="case-dialog" aria-label="Build details"><button type="button" class="dlg-close" aria-label="Close">&times;</button><div class="dlg-body"></div></dialog>
 <h2>What these builds show</h2>
 <p>Across eleven accounts, the same technical toolkit did the heavy lifting.</p>
 <div class="table-wrap"><table><thead><tr><th>Skill</th><th>Where it shows up</th></tr></thead><tbody><tr><td>Behavioural and RFM segmentation</td><td>Cases 1, 4, 5, 6, 7</td></tr><tr><td>Suppression, sunset and deliverability recovery</td><td>Cases 1, 2</td></tr><tr><td>Full lifecycle flow architecture (welcome to sunset)</td><td>Cases 1, 2, 3, 10</td></tr><tr><td>Conditional splits, timing and exit logic</td><td>Cases 1, 2, 7, 8</td></tr><tr><td>Replenishment and cross-sell logic from purchase data</td><td>Cases 1, 2, 4</td></tr><tr><td>Email + SMS orchestration</td><td>Cases 3, 4, 5, 6</td></tr><tr><td>Tagging and funnel-to-Klaviyo integration</td><td>Cases 9, 11</td></tr><tr><td>Testing and revenue-attribution reporting</td><td>Cases 1, 3, 5, 6</td></tr></tbody></table></div>
@@ -234,5 +265,24 @@ p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
 
 <footer>&copy; 2026 Joyal Johnson &middot; <a href="index.html">joyaljohnson.com</a></footer>
 <script src="assets/js/theme.js"></script>
+<script>
+(function(){
+  var dlg=document.getElementById('case-dialog'), body=dlg.querySelector('.dlg-body'), store=document.getElementById('case-store'), current=null;
+  function open(id, push){
+    var sec=document.getElementById(id); if(!sec) return;
+    if(current) store.appendChild(current);
+    current=sec; body.appendChild(sec); dlg.scrollTop=0;
+    if(!dlg.open){ dlg.showModal(); document.body.classList.add('dlg-open'); }
+    if(push!==false) history.replaceState(null,'','#'+id);
+  }
+  function close(){ dlg.close(); }
+  dlg.addEventListener('close', function(){ if(current){ store.appendChild(current); current=null; } document.body.classList.remove('dlg-open'); history.replaceState(null,'',location.pathname); });
+  dlg.querySelector('.dlg-close').addEventListener('click', close);
+  dlg.addEventListener('click', function(e){ if(e.target===dlg) close(); });
+  document.querySelectorAll('.case-card').forEach(function(c){ c.addEventListener('click', function(){ open(c.getAttribute('data-case')); }); });
+  if(/^#case-\d+$/.test(location.hash)) open(location.hash.slice(1), false);
+})();
+</script>
+
 </body>
 </html>
