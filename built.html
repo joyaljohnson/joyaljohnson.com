@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>try{if(localStorage.getItem('jj-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<title>What I've Built | Joyal Johnson</title>
+<meta name="description" content="Eleven Klaviyo builds for DTC and e-commerce brands: segmentation, flow architecture and flow logic, with the results each system produced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/blog.css">
+<style>
+.case{margin-top:72px;padding-top:40px;border-top:1px solid rgba(233,233,237,.08)}
+.case-num{font:600 12px ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#d2cefd;margin-bottom:10px}
+.case h2{margin:0 0 6px}
+.case-sub{margin:0 0 22px;font-size:17px;color:rgba(233,233,237,.6)}
+.callout.result{margin:0 0 24px;border-left:3px solid #9184d9}
+p.role{font-size:14.5px;color:rgba(233,233,237,.55);margin-top:8px}
+.toc{list-style:none;padding:0;margin:0 0 8px}
+.toc li{margin:0}
+.toc a{display:flex;gap:14px;padding:9px 0;text-decoration:none;color:rgba(233,233,237,.75);border-bottom:1px solid rgba(233,233,237,.06);font-size:15px}
+.toc a span{font:600 12px ui-monospace,Menlo,monospace;color:#d2cefd;padding-top:3px;flex:none}
+.toc a:hover{color:#e9e9ed}
+:root[data-theme="light"] .case{border-color:rgba(27,26,34,.1)}
+:root[data-theme="light"] .case-num,:root[data-theme="light"] .toc a span{color:#54459e}
+:root[data-theme="light"] .case-sub,:root[data-theme="light"] p.role{color:rgba(27,26,34,.6)}
+:root[data-theme="light"] .toc a{color:rgba(27,26,34,.75);border-color:rgba(27,26,34,.08)}
+:root[data-theme="light"] .toc a:hover{color:#1b1a22}
+:root[data-theme="light"] .callout.result{border-left-color:#6d5cc4}
+</style>
+<link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body>
+<header>
+  <a class="back" href="index.html">&larr; Home</a>
+  <div class="hdr-r"><a class="brand" href="index.html">Joyal Johnson</a><button type="button" id="theme-toggle" class="theme-btn" title="Toggle dark / light mode" aria-label="Toggle dark or light mode" aria-pressed="false"></button></div>
+</header>
+
+<div class="wrap">
+<article>
+  <div class="eyebrow">Email &amp; CRM</div>
+  <h1>What I've built</h1>
+  <p class="lede">Klaviyo segmentation, flow architecture and flow logic for eleven DTC and e-commerce brands.</p>
+  <ul class="toc"><li><a href="#case-1"><span>01</span>Health &amp; wellness brand</a></li><li><a href="#case-2"><span>02</span>Long-established food brand</a></li><li><a href="#case-3"><span>03</span>Premium pet brand</a></li><li><a href="#case-4"><span>04</span>Community apparel brand</a></li><li><a href="#case-5"><span>05</span>Spirits &amp; wine retailer</a></li><li><a href="#case-6"><span>06</span>Home furnishings brand</a></li><li><a href="#case-7"><span>07</span>Handmade pet accessories</a></li><li><a href="#case-8"><span>08</span>Premium furniture brand</a></li><li><a href="#case-9"><span>09</span>Multi-event organiser</a></li><li><a href="#case-10"><span>10</span>Lifestyle brand</a></li><li><a href="#case-11"><span>11</span>Fermented beverage brand</a></li></ul>
+<h2>How to read these</h2>
+<p>Eleven Klaviyo builds for DTC and e-commerce brands, delivered while working inside an agency team. On every one, I owned the technical layer: segmentation, flow building and flow logic.</p>
+<p>Design and copy were handled by others on the team, and on some accounts strategy was set by the agency lead. Brands are anonymised and no creative is shown, these write-ups cover the part I built: who gets what, when, and why.</p>
+<p>Each case follows the same shape: the starting state, the technical problem, what I built, and the results the system produced.</p>
+<p><em>All money figures are converted from US dollars at £1 = $1.3385 (rate on 21 October 2026) and rounded. Percentages are unchanged.</em></p>
+<section class="case" id="case-1"><div class="case-num">01</div><h2>Health &amp; wellness brand</h2><p class="case-sub">£11.8M email revenue over 31 months</p>
+<div class="callout result"><p><strong>Result:</strong> Email grew from ~17% to over 50% of total store revenue at peak, and held 35–47% two and a half years in.</p></div>
+<p><strong>Brand:</strong> High-ticket health &amp; wellness DTC brand, large and fast-growing list.</p>
+<h3>Starting state</h3>
+<ul>
+<li>Only default Klaviyo flows: a basic welcome and a cart abandonment sequence</li>
+<li>Campaigns sent to the full list, no meaningful segmentation</li>
+<li>List growing faster than engagement; 364 spam complaints in the first month</li>
+</ul>
+<h3>What I built</h3>
+<ol>
+<li><strong>Flow architecture, 15–20 flows from scratch:</strong> welcome, browse abandonment, cart abandonment, post-purchase, cross-sell/upsell, replenishment, win-back, VIP nurture and sunset.</li>
+<li><strong>Flow logic:</strong> win-back staged at 60, 90 and 120 days since last order with graduated offers; replenishment timed to average product lifespan; cross-sell recommendations driven by purchase history; incentives in cart recovery reserved for high-value carts.</li>
+<li><strong>Segmentation for campaigns:</strong> audiences split by engagement, purchase history and product interest, so campaigns scaled from 911K to 12M+ monthly recipients without blasting the whole file.</li>
+<li><strong>Peak-season segmentation:</strong> a VIP segment received early access 48 hours before the main list, with cart, browse and re-engagement flows running alongside campaigns.</li>
+</ol>
+<h3>The deliverability crisis: the cleanup</h3>
+<p>Scaling that fast brought dead weight. Spam complaints hit 11,392 in a single month. I rebuilt the sending setup around list health:</p>
+<ol>
+<li>Suppressed anyone with no open or click in 90 days from active sending</li>
+<li>Cleaned the file of hard bounces, spam traps, role-based and disposable addresses</li>
+<li>Sent only to the most engaged segments in small batches for several weeks to rebuild sender reputation</li>
+<li>Put permanent hygiene in place: an automated sunset flow, double opt-in on high-risk signup sources and monthly cleaning</li>
+</ol>
+<p>Open rate rose from the low-to-mid 20s to 39.54% within four months, and revenue per subscriber went up on a smaller list.</p>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Total email revenue (31 months)</td><td>~£11.8M</td></tr><tr><td>Peak month</td><td>£1.23M, 50.45% of store revenue</td></tr><tr><td>Flow revenue</td><td>£75K–£300K per month, automated</td></tr><tr><td>Open rate after cleanup</td><td>39.54%</td></tr><tr><td>Email share of store revenue (2023–24)</td><td>30–47%</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Flow builds, flow logic, segmentation, list cleanup and suppression setup. Creative and copy by the team.</p>
+</section>
+<section class="case" id="case-2"><div class="case-num">02</div><h2>Long-established food brand</h2><p class="case-sub">reviving a dormant list with 14 segments and 9 flows</p>
+<div class="callout result"><p><strong>Result:</strong> A list that hadn't been emailed properly in over a year returned a 41.6% open rate and 7.56% click rate on its first reactivation send, with zero spam complaints.</p></div>
+<p><strong>Brand:</strong> Decades-old clean-ingredient food brand that lost customers after a product change, then reversed it without telling them.</p>
+<h3>Starting state</h3>
+<ul>
+<li>~16,000 customers; under 10% engaged in the last 90 days</li>
+<li>8,608 customers had received no email in 365 days</li>
+<li>3,715 lapsed customers tied to the product change</li>
+<li>No flows at all: no welcome, post-purchase, abandonment, win-back or sunset</li>
+</ul>
+<p><strong>The technical problem:</strong> Blasting a cold list would have triggered complaints and bounces and damaged the sending domain. Infrastructure had to come before any campaign.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>14 custom segments in four groups:</strong> campaign send pools, customer recovery pools, suppression and risk segments, and reusable exclusion audiences.</li>
+<li><strong>Account-wide engagement rules:</strong> no segment relied on Apple Mail Privacy opens; engagement was defined by clicks, purchases and real site activity.</li>
+<li><strong>Send safeguards:</strong> suppression applied before every send, Smart Sending on globally, and cold audiences released in controlled batches across warm-then-cold waves.</li>
+<li><strong>9 lifecycle flows, 40+ emails:</strong> welcome, first-time and repeat post-purchase, abandoned checkout, abandoned cart, browse abandonment, win-back, replenishment, cross-sell and sunset.</li>
+<li><strong>Flow logic:</strong> replenishment timed to realistic consumption windows rather than fixed dates; cross-sell flavour recommendations switched dynamically on previous purchases; discounts held back to the final touchpoint; conditional splits by lifecycle stage and subscription status.</li>
+</ol>
+<h3>Results: first reactivation send (5,633 recipients, 24 hours)</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Open rate</td><td>41.6%</td></tr><tr><td>Click rate</td><td>7.56%</td></tr><tr><td>Orders</td><td>13</td></tr><tr><td>Spam complaints</td><td>0</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Segment architecture, suppression logic, deliverability setup and all nine flow builds. Copy direction and campaign messaging by the team.</p>
+</section>
+<section class="case" id="case-3"><div class="case-num">03</div><h2>Premium pet brand</h2><p class="case-sub">£667K attributed revenue, flows as the backbone</p>
+<div class="callout result"><p><strong>Result:</strong> Attributed revenue grew 65.6% YoY to £667K, with flows growing fastest (+79.9%) and producing 55% of revenue from 5% of the recipient volume.</p></div>
+<p><strong>Brand:</strong> Premium pet products, scaling quickly. Klaviyo drove 41.5% of total store revenue in the period.</p>
+<p><strong>Starting state:</strong> Revenue was growing, but efficiency was slipping. The list expanded aggressively while clicks stayed flat and revenue per recipient fell. Several high-performing flows weren't fully live.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>Flow-first architecture:</strong> welcome, abandoned checkout, abandoned cart, browse abandonment and post-purchase treated as the core revenue engine, with campaigns as the reach layer.</li>
+<li><strong>SMS launch:</strong> SMS added only at high-intent trigger points, cart abandonment, post-purchase and low-inventory alerts, rather than as a broadcast channel.</li>
+<li><strong>Reporting clarity at scale:</strong> flow-by-flow and channel-level revenue tracking so it stayed clear which assets carried revenue as recipient volume grew 230%.</li>
+<li><strong>Rollout audit:</strong> identified three abandonment flows still in Draft (including a third-party identity-resolution browse flow) that had already produced £121K, a ready roadmap of untapped revenue.</li>
+</ol>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Total attributed revenue</td><td>£667K (+65.6% YoY)</td></tr><tr><td>Flow revenue</td><td>£370K (+79.9% YoY) from 586K recipients</td></tr><tr><td>Campaign revenue</td><td>£297K (+50.7% YoY) from 10.6M recipients</td></tr><tr><td>Welcome flow</td><td>£80K at £1.42 per recipient</td></tr><tr><td>Abandoned checkout</td><td>£3.38 per recipient, highest in the account</td></tr><tr><td>SMS revenue (first year)</td><td>£55K; ~£1.16 per recipient on SMS flows</td></tr><tr><td>SMS campaign click rate</td><td>26.3%</td></tr></tbody></table></div>
+<p>Q4 attributed revenue reached ~£85K per month, nearly double the Jan–Sep baseline, with flows carrying most of the uplift.</p>
+<p class="role"><strong>My role:</strong> Flow builds and logic, SMS flow setup and segmentation. Creative, copy and campaign strategy by the team.</p>
+</section>
+<section class="case" id="case-4"><div class="case-num">04</div><h2>Community apparel brand</h2><p class="case-sub">220% growth in attributed revenue</p>
+<div class="callout result"><p><strong>Result:</strong> Revenue doubled in year one; in year two, Klaviyo-attributed revenue rose 220.6% to £719K on £1.61M total revenue.</p></div>
+<p><strong>Brand:</strong> Long-running apparel retailer serving a large membership organisation. Customers buy around the organisation's own events, not retail holidays.</p>
+<p><strong>Starting state:</strong> No segmentation and no SMS. Campaigns went to the full list on a loose schedule. Twenty years of purchase history and event-driven buying patterns sat unused.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>Event-calendar segmentation:</strong> segments built from purchase history and event-linked buying, so each subscriber received campaigns for the events relevant to them, not every event.</li>
+<li><strong>Multi-stage event sequences:</strong> teaser, countdown, day-of and post-event follow-up phases for each major event, each targeted to its own segment.</li>
+<li><strong>SMS channel from zero:</strong> opt-in setup and an SMS audience reserved for limited drops, early access, low-inventory alerts and event-day reminders.</li>
+<li><strong>Flow rebuild:</strong> welcome, browse abandonment, post-purchase cross-sell, and win-back triggered by each customer's typical repurchase cycle.</li>
+<li><strong>Measurement loop:</strong> revenue by channel, campaign vs flow, click-through by segment and conversion by product category and event, used to tighten segments every week.</li>
+</ol>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Year one revenue</td><td>£498K (2x prior)</td></tr><tr><td>Year two total revenue</td><td>£1.61M</td></tr><tr><td>Year two attributed revenue</td><td>£719K (+220.6% YoY)</td></tr><tr><td>Campaign revenue</td><td>£532K (+150%)</td></tr><tr><td>Flow revenue</td><td>£188K</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Segmentation, SMS setup, flow builds and trigger logic. Event strategy, design and copy by the team.</p>
+</section>
+<section class="case" id="case-5"><div class="case-num">05</div><h2>Spirits &amp; wine retailer</h2><p class="case-sub">296.9% growth in the industry's slowest quarter</p>
+<div class="callout result"><p><strong>Result:</strong> In Q1, the quarter liquor retail usually writes off, attributed revenue rose 296.9% YoY to £77K, with flow revenue up 328%.</p></div>
+<p><strong>Brand:</strong> Online spirits and wine retailer with a large catalogue, from everyday staples to allocated bottles.</p>
+<p><strong>Starting state:</strong> One-size-fits-all campaigns. A whiskey collector, a wine buyer and a tequila fan got the same send. Effort was concentrated in Q4, with almost nothing in Q1.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>Preference segmentation:</strong> segments from purchase and browse behaviour, whiskey collectors, wine enthusiasts, tequila, vodka, craft-spirit explorers, and seasonal gifters active only in Nov–Dec.</li>
+<li><strong>Segment-specific content routing:</strong> each segment received its own recommendations, e.g. limited-release alerts for collectors who had bought several bottles of a category in six months.</li>
+<li><strong>SMS restricted to urgency:</strong> flash sales, allocated-stock alerts, delivery windows and holiday countdowns only, keeping opt-outs low.</li>
+<li><strong>Holiday browse-triggered flows</strong> to catch gift shoppers during Q4.</li>
+<li><strong>Testing loop:</strong> A/B tests on subject lines, send times, product positioning and offer structure; winning patterns from one segment tested on others.</li>
+</ol>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Period</th><th>Result</th></tr></thead><tbody><tr><td>Full year 2023</td><td>£498K revenue (+35.5%); attributed revenue +58.4%</td></tr><tr><td>Q4 2023</td><td>Total revenue +80.6% YoY</td></tr><tr><td>Q1 2024 total revenue</td><td>£208K (+149.8% YoY)</td></tr><tr><td>Q1 2024 attributed revenue</td><td>£77K (+296.9% YoY)</td></tr><tr><td>Q1 2024 flow revenue</td><td>+328% YoY</td></tr><tr><td>Q1 2024 campaign revenue</td><td>+234% YoY</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Segment definitions, flow builds, SMS setup and test execution. Quarterly campaign strategy, copy and design by the team.</p>
+</section>
+<section class="case" id="case-6"><div class="case-num">06</div><h2>Home furnishings brand</h2><p class="case-sub">153.6% growth in attributed revenue</p>
+<div class="callout result"><p><strong>Result:</strong> Total revenue rose 109.4% to £1.30M in year one; attributed revenue grew 153.6% YoY to £681K in year two.</p></div>
+<p><strong>Brand:</strong> Home furnishings with a wide catalogue and a long consideration cycle, customers browse, measure and compare for weeks.</p>
+<p><strong>Starting state:</strong> Every subscriber got the same email on a fixed Tuesday/Thursday calendar. Purchase history, browse data, category interest and RFM signals were all unused.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>Behavioural segmentation:</strong> segments by home type, budget range, product category interest and browsing intensity, separating apartment dwellers from homeowners, first-time buyers from redecorators, storage-focused from design-focused shoppers.</li>
+<li><strong>Email + SMS cart choreography:</strong> cart abandonment sends email first, then an SMS 24 hours later; SMS otherwise reserved for flash sales, back-in-stock and limited-time offers.</li>
+<li><strong>Consideration-cycle flows:</strong> longer, patient browse abandonment sequences, and post-purchase flows recommending the next piece for the same room rather than a random upsell.</li>
+<li><strong>Analytics loop:</strong> conversion value by flow, revenue per recipient, opens by segment and clicks by category tracked weekly and fed back into segment and timing changes.</li>
+</ol>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Year one total revenue</td><td>£1.30M (+109.4%)</td></tr><tr><td>Flow conversion value</td><td>+150.9%</td></tr><tr><td>Open rate</td><td>+44.3%</td></tr><tr><td>Year two attributed revenue</td><td>£681K (+153.6% YoY)</td></tr><tr><td>Email recipients</td><td>+194.9%</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Segment architecture, flow builds, SMS timing logic and reporting. Design and copy by the team.</p>
+</section>
+<section class="case" id="case-7"><div class="case-num">07</div><h2>Handmade pet accessories</h2><p class="case-sub">email revenue tripled in two months</p>
+<div class="callout result"><p><strong>Result:</strong> Flow revenue doubled in four weeks and total email revenue tripled in two months, a 24x ROI on the engagement.</p></div>
+<p><strong>Brand:</strong> Handmade pet accessories with 2,000+ five-star reviews and a loyal customer base.</p>
+<p><strong>Starting state:</strong> Zero segmentation, first-time subscribers and three-time buyers got the same email. The welcome flow was a single discount email.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>Behavioural segmentation:</strong> split by purchase history, product size preference, category browsing and engagement level, so a new visitor browsing small sizes and a repeat buyer of seasonal items entered different journeys.</li>
+<li><strong>4-email welcome sequence</strong> replacing the single-coupon email, with the offer held until trust was built.</li>
+<li><strong>Full flow rebuild:</strong> browse abandonment showing the exact product viewed with a matching review; cart abandonment with product-level social proof; post-purchase anticipation sequence; win-back for lapsed customers featuring new arrivals in their preferred size.</li>
+<li><strong>Dynamic review content</strong> pulled into flows, campaigns and transactional emails.</li>
+</ol>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>ROI on email investment</td><td>24x</td></tr><tr><td>Email revenue (2 months)</td><td>3x</td></tr><tr><td>Email revenue (6 months)</td><td>2.86x</td></tr><tr><td>Total orders (6 months)</td><td>2.7x</td></tr><tr><td>Flow revenue per recipient</td><td>1.5x</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Segmentation, flow builds, conditional logic and dynamic product/review blocks. Templates, design and copy by the team.</p>
+</section>
+<section class="case" id="case-8"><div class="case-num">08</div><h2>Premium furniture brand</h2><p class="case-sub">59.3% revenue growth without discounting</p>
+<div class="callout result"><p><strong>Result:</strong> Campaign-attributed revenue rose 59.3% in a year while discounts were removed, and campaign conversion value grew 160.7%.</p></div>
+<p><strong>Brand:</strong> Handcrafted, high-ticket furniture (£375–£1,500) in a trust-driven niche.</p>
+<p><strong>Starting state:</strong> Every send led with a discount, training the list to wait for the next promo. The list was small and growth had stalled.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>Discount-free flow logic:</strong> welcome, browse abandonment and cart flows rebuilt to educate rather than discount; browse abandonment surfaced the specific style viewed with extra angles and reviews.</li>
+<li><strong>Post-purchase timing:</strong> review requests delayed until customers had time to install and use the product; cross-sells framed around completing the setup.</li>
+<li><strong>Feedback capture:</strong> post-purchase survey emails whose answers were fed back into segmentation and campaign planning.</li>
+<li><strong>List growth infrastructure:</strong> lead-magnet signup forms (buying guides, sizing guides) placed only on high-intent product pages, each feeding its own entry path.</li>
+</ol>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Campaign-attributed revenue</td><td>+59.3%</td></tr><tr><td>Campaign recipients</td><td>+478.3%</td></tr><tr><td>Campaign conversion value</td><td>+160.7%</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Flow builds and timing logic, signup form setup and segmentation. Positioning, copy and creative by the team.</p>
+</section>
+<section class="case" id="case-9"><div class="case-num">09</div><h2>Multi-event organiser</h2><p class="case-sub">£28K from one funnel, 4,153 registrations</p>
+<div class="callout result"><p><strong>Result:</strong> Connected behavioural flows and tagged funnels turned four separate events into one system: £27,800 from a single funnel and 4,153+ tagged registrations.</p></div>
+<p><strong>Client:</strong> Large annual expo running a luncheon, sessions, a tradeshow and a concert.</p>
+<p><strong>Starting state:</strong> Each event had its own emails, landing page and form, with no shared data. Flows were minimal and didn't capture intent.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>Behavioural trigger flows:</strong> page-visit, cart abandonment, and cross-event flows that fired when someone registered for one event but not another.</li>
+<li><strong>Interest tagging:</strong> every registrant tagged by event and interest in Klaviyo, so low-ticket and free registrations became warm segments for higher-ticket events.</li>
+<li><strong>Funnel-to-Klaviyo wiring</strong> for four funnels with distinct jobs: a high-ticket luncheon, packaged session passes, a low-ticket entry event, and a free concert built for volume.</li>
+<li><strong>Workflow campaigns:</strong> automated, behaviour-timed sequences in place of calendar broadcasts.</li>
+</ol>
+<h3>Results</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Luncheon funnel revenue</td><td>£27,800</td></tr><tr><td>Session-pass funnel revenue</td><td>£14,300</td></tr><tr><td>Entry-event conversion rate</td><td>4.13%</td></tr><tr><td>Concert registrations captured</td><td>4,153+</td></tr><tr><td>Total email revenue</td><td>£10,400 across 65,406 emails, 147 orders</td></tr><tr><td>Cart abandonment flow</td><td>33.63% open, 10.18% click, 30%+ click-to-open</td></tr><tr><td>Workflow campaigns</td><td>33.73% open, 5.20% click</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Flow builds, trigger logic, tagging and segmentation. Funnel pages, paid media, design and copy by the team.</p>
+</section>
+<section class="case" id="case-10"><div class="case-num">10</div><h2>Lifestyle brand</h2><p class="case-sub">a 5-flow, 19-email lifecycle system</p>
+<div class="callout result"><p><strong>Result:</strong> A complete always-on retention system covering every core lifecycle stage, built so the brand's emails run without anyone writing that week.</p></div>
+<p><strong>Brand:</strong> Warm, outdoor-lifestyle DTC brand with a strong existing identity but no lifecycle infrastructure.</p>
+<p><strong>What I built</strong>, five flows mapped to five lifecycle stages:</p>
+<div class="table-wrap"><table><thead><tr><th>Flow</th><th>Emails</th><th>Job</th></tr></thead><tbody><tr><td>Welcome</td><td>5</td><td>Introduce the brand and earn the first order without leaning on discounts</td></tr><tr><td>Abandoned cart</td><td>3</td><td>Tightly timed recovery for shoppers who reached the cart</td></tr><tr><td>Browse abandonment</td><td>3</td><td>Re-engage interest, tailored to the products viewed</td></tr><tr><td>Post-purchase</td><td>4</td><td>Confirmation, anticipation, education, then the bridge to a second order</td></tr><tr><td>Win-back</td><td>4</td><td>Reactivate lapsed customers; no heavy discount on the first touch</td></tr></tbody></table></div>
+<p class="role"><strong>My role:</strong> Lifecycle mapping into flows, trigger and filter setup, timing and exit logic for all 19 emails. Design and copy by the team.</p>
+</section>
+<section class="case" id="case-11"><div class="case-num">11</div><h2>Fermented beverage brand</h2><p class="case-sub">a welcome flow built as lifecycle foundation</p>
+<div class="callout result"><p><strong>Result:</strong> A 7-email welcome flow wired with the segmentation hooks and profile data needed for every later lifecycle flow, so nothing has to be rebuilt as the brand grows.</p></div>
+<p><strong>Brand:</strong> Founder-led beverage brand in a category many first-time buyers don't fully understand.</p>
+<p><strong>Starting state:</strong> No structured welcome, no customer education, no retention infrastructure.</p>
+<h3>What I built</h3>
+<ol>
+<li><strong>7-email welcome sequence</strong> ordered brand → category → community → product → conversion, with the only offer (20% off, 48-hour window) placed in the final email.</li>
+<li><strong>Future-proof wiring:</strong> identity tags, segmentation hooks and behavioural signals set up from day one.</li>
+<li><strong>Planned plug-in points</strong> for abandoned cart, post-purchase nurture, cross-flavour education, replenishment, win-back and community re-engagement.</li>
+</ol>
+<p class="role"><strong>My role:</strong> Flow build, sequence timing, tagging and segmentation setup. Brand voice, copy and design by the team.</p>
+</section>
+<h2>What these builds show</h2>
+<p>Across eleven accounts, the same technical toolkit did the heavy lifting.</p>
+<div class="table-wrap"><table><thead><tr><th>Skill</th><th>Where it shows up</th></tr></thead><tbody><tr><td>Behavioural and RFM segmentation</td><td>Cases 1, 4, 5, 6, 7</td></tr><tr><td>Suppression, sunset and deliverability recovery</td><td>Cases 1, 2</td></tr><tr><td>Full lifecycle flow architecture (welcome to sunset)</td><td>Cases 1, 2, 3, 10</td></tr><tr><td>Conditional splits, timing and exit logic</td><td>Cases 1, 2, 7, 8</td></tr><tr><td>Replenishment and cross-sell logic from purchase data</td><td>Cases 1, 2, 4</td></tr><tr><td>Email + SMS orchestration</td><td>Cases 3, 4, 5, 6</td></tr><tr><td>Tagging and funnel-to-Klaviyo integration</td><td>Cases 9, 11</td></tr><tr><td>Testing and revenue-attribution reporting</td><td>Cases 1, 3, 5, 6</td></tr></tbody></table></div>
+  <div class="cta">
+    <p>Want this kind of system behind your email?</p>
+    <a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener">Connect with me on LinkedIn &rarr;</a>
+  </div>
+</article>
+</div>
+
+<footer>&copy; 2026 Joyal Johnson &middot; <a href="index.html">joyaljohnson.com</a></footer>
+<script src="assets/js/theme.js"></script>
+</body>
+</html>
