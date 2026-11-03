@@ -28,19 +28,21 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 .a11y-btn{display:inline-flex;align-items:center;justify-content:center;font-family:inherit;cursor:pointer;background:transparent;color:rgba(var(--text-rgb),.7);border:1px solid rgba(var(--text-rgb),.18);border-radius:6px}
 .a11y-btn:hover{color:var(--text);border-color:rgba(var(--text-rgb),.4)}
 .hdr-right{display:flex;align-items:center;gap:16px}
+.site-hdr::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(var(--panel-rgb),.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .sec-nav{position:relative}
 .sec-trigger{display:flex;align-items:center;gap:6px;padding:6px 0;margin:0;background:none;border:0;font:inherit;color:inherit;cursor:pointer}
 .sec-trigger:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
 .sec-label{display:block}
 .sec-chev{width:13px;height:13px;flex:none;color:rgba(var(--text-rgb),.45);transition:transform .35s ease,color .2s ease}
 .sec-nav.open .sec-chev{transform:rotate(180deg);color:var(--text)}
-.sec-menu{position:absolute;right:-10px;top:calc(100% + 10px);min-width:210px;margin:0;padding:8px;list-style:none;border-radius:10px;background:rgba(var(--panel-rgb),.97);backdrop-filter:blur(14px);box-shadow:0 0 0 1px var(--card-border),0 14px 34px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s;z-index:20}
+.sec-menu{position:absolute;right:-10px;top:calc(100% + 10px);min-width:190px;margin:0;padding:6px 4px;list-style:none;border-radius:14px;background:rgba(var(--panel-rgb),.62);-webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s;z-index:20}
 .sec-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
 .sec-nav.open .sec-menu{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .35s ease,visibility 0s}
 .sec-menu li{margin:0;opacity:0;transform:translateY(-4px);transition:opacity .6s ease,transform .6s ease;transition-delay:calc(var(--i,0) * 70ms)}
 .sec-nav.open .sec-menu li{opacity:1;transform:none}
 .sec-menu a{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:8px 12px;border-radius:6px;font-size:13.5px;color:rgba(var(--text-rgb),.42);text-decoration:none;transition:color .25s ease,background .25s ease}
-.sec-menu a:hover,.sec-menu a:focus-visible{color:var(--text);background:rgba(var(--text-rgb),.06);outline:none}
+.sec-menu a:hover,.sec-menu a:focus-visible{color:var(--text);background:rgba(var(--text-rgb),.07);outline:none}
+.sec-menu a{border-radius:999px;text-shadow:0 1px 8px rgba(var(--panel-rgb),.9)}
 .sec-menu a.active{color:var(--text)}
 .sec-menu a::after{content:"";width:6px;height:6px;border-radius:50%;background:transparent;flex:none;transition:background .25s ease}
 .sec-menu a.active::after{background:var(--accent)}
@@ -116,7 +118,7 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 <body>
 <div class="wrap">
 <div class="dv-card" style="width:1280px;background:var(--panel);color:var(--text)">
-<div style="position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;background:rgba(var(--panel-rgb),.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(var(--text-rgb),.08)">
+<div class="site-hdr" style="position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:16.8px 44px;border-bottom:1px solid rgba(var(--text-rgb),.08)">
 <div style="display:flex;align-items:baseline;gap:10px"><span style="font-weight:500;font-size:15px;letter-spacing:-.01em">Joyal Johnson</span></div>
 <div class="hdr-right">
 <div class="sec-nav" id="sec-nav"><button type="button" class="sec-trigger" id="sec-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="sec-menu" title="Jump to a section"><span class="sec-label" id="sec-label" aria-live="polite"></span><svg class="sec-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><ul class="sec-menu" id="sec-menu" role="menu" aria-label="Sections"></ul></div>
@@ -127,7 +129,7 @@ a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--accent-hover
 <div style="max-width:1150px;margin:0 auto;text-align:center">
 <div style="display:flex;align-items:center;justify-content:center;margin-bottom:22.4px"><span class="eyebrow" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft)"><span class="eb">CRM &amp; Lifecycle Marketing Specialist</span><span class="eb-sep"> · </span><span class="eb">5+ years · Klaviyo Master Certified</span></span></div>
 <h1 class="hero-h1" style="margin:0 auto;font-size:clamp(2rem, -0.26rem + 4.73vw, 3.4rem);line-height:1.22;letter-spacing:-.02em;font-weight:500">I help e-commerce brands <span class="grow">grow.<svg class="grow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span><br><span class="hero-sub" style="color:rgba(var(--text-rgb),.45)">Email, CRM, content and analytics, <br>with AI in the loop.</span></h1>
-<p style="margin:28px auto 0;max-width:600px;font-size:16.5px;line-height:1.6;color:rgba(var(--text-rgb),.62)">I build the email and CRM systems that turn first orders into repeat customers, plus the content, SEO and analytics around them. Based in Glasgow.</p>
+<p style="margin:28px auto 0;max-width:600px;font-size:16.5px;line-height:1.6;color:rgba(var(--text-rgb),.62)">I build the email and CRM systems that turn first orders into repeat customers, plus the content, SEO and analytics around them.</p>
 <div style="display:flex;justify-content:center;gap:11.2px;margin-top:33.6px;flex-wrap:wrap">
 <a href="https://www.linkedin.com/in/jo11/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:11.2px 22.4px;text-decoration:none" style-hover="background:rgba(var(--accent-rgb),.14)">Get in touch →</a>
 </div>
