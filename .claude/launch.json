@@ -4,7 +4,7 @@
     {
       "name": "jj-site",
       "runtimeExecutable": "sh",
-      "runtimeArgs": ["-c", "python3 -m http.server $PORT"],
+      "runtimeArgs": ["-c", "python3 .claude/serve.py $PORT"],
       "port": 8791,
       "autoPort": true
     }
